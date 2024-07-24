@@ -1,0 +1,29 @@
+//PALETA DE COLORES
+$palette:(
+    'white': #fff,
+    'black': #000,
+    'primary': #40B5CB,
+    'secondary': #C0DF40,
+    'tertiary': #94A7AE,
+    'cuartary': #64766A,
+    'fifthy': #333333,
+    'danger': #e76363,
+    'success': #49cc49,
+    'bg': rgb(241, 241, 241),
+    'bg-dark': #272B33,
+    'bg-dark-heavy': rgb(0,0,0, .65),
+    'bg-dark-light': rgb(0,0,0, .15),
+);
+//BREAKPOINTS
+$breakpoints: (
+    'desktop': 1440px,
+    'laptop': 1280px,
+    'laptop-small': 1100px,
+    'ipad-big': 992px,
+    'ipad-small': 768px,
+    'mobile': 576px
+);
+//OTHERS
+$transition-duration: 0.3s;
+$limit-width: 1300px;
+$height-header: 65px;

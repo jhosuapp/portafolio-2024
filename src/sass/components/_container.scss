@@ -1,0 +1,63 @@
+@use '../base/functions' as fun;
+@use '../base/variables' as var;
+
+body{
+    background-color: fun.color('bg');
+    position: relative;
+    overflow-x: hidden;
+    transition: .5s ease background-color;
+    &.light{
+        background-color: fun.color('white');
+    }
+}
+
+.ctn{
+    margin: auto;
+    width: 90%;
+    max-width: var.$limit-width;
+    position: relative;
+    &--top{
+        padding-top: var.$height-header;
+    }
+    &--bottom{
+        padding-bottom: 80px;
+    }
+    &--fullheight{
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &--bg{
+        background-color: fun.color('bg-dark');
+        padding: 60px 0;
+        position: relative;
+        background-color: fun.color('bg-dark');
+        min-height: 100vh;
+        body.light & {
+            background-color: rgb(0,0,0, .15);
+        }
+    }
+    &--relative{
+        position: relative;
+    }
+    &--center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &--column{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    main{
+        padding-top: 70px;
+    }
+    .ctn{
+        &--bg{
+            padding: 40px 0;
+        }
+    }
+}
