@@ -57,18 +57,6 @@
             bottom: -2rem;
         }
     }
-    &--hover{
-        &:hover{
-            span{
-                &:last-child{
-                    bottom: clamp(0.015rem, 0.015vw,0.75rem);
-                }
-                &:first-child{
-                    top: -2rem;
-                }
-            }
-        }
-    }
     &--hover-dot{
         &:hover{
             b{

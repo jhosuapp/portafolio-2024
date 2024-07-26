@@ -39,7 +39,6 @@
         border-radius: 1.5rem;
     }
     li{
-        padding: 1.25rem 2rem;
         margin-bottom: 0.5rem;
         position: relative;
         display: flex;
@@ -65,49 +64,16 @@
     }
     a{
         color: fun.color('primary');
+        padding: 1.25rem 2rem;
         text-transform: uppercase;
         font-size: clamp(1.8rem, 3.5vh, 3rem);
         position: relative;
         z-index: 2;
     }
-    div{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        width: 100%;
-        padding: 0 1rem;
-        z-index: 10;
-        span{
-            transition: .3s ease;
-            transition-property: bottom, top, opacity;
-            &:first-child{
-                position: relative;
-                top: 0;
-                opacity: 1;
-            }
-            &:last-child{
-                position: absolute;
-                bottom: -2rem;
-                opacity: 0;
-            }
-        }
-    }
     li:hover{
         &::before{
             transform: scale(1);
             opacity: 1;
-        }
-        div span{
-            &:last-child{
-                bottom: clamp(0.015rem, 0.015vw,0.75rem);
-                opacity: 1;
-            }
-            &:first-child{
-                top: -2rem;
-                opacity: 0;
-            }
         }
     }
     li.active-route{

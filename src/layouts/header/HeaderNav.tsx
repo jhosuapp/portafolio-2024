@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { HeaderNavItem } from './HeaderNavItem';
+import { HeaderNavCta } from "./HeaderNavCta";
 
 const HeaderNav = ():JSX.Element => {
     return (
@@ -9,13 +10,7 @@ const HeaderNav = ():JSX.Element => {
                 <HeaderNavItem text='CONTACT' link='/contact' />
                 <HeaderNavItem text='OTHER PAGE' link='/other-page' />
             </ul>
-            <a href="#">
-                <img src="" alt="" />
-                <div>
-                    <span>GITHUB</span>
-                    <span>JHOSUAPP</span>
-                </div>
-            </a>
+            <HeaderNavCta />
         </motion.nav>
     )
 }

@@ -4,7 +4,7 @@ const HeaderButtons = ():JSX.Element => {
     return (
         <div className="header__buttons">
             <Button 
-                className='btn--primary btn--hover'
+                className='btn--primary h-text'
                 Text={ `LET'S TALK` }
                 HoverText='Do it'
                 onClick={ ()=>{

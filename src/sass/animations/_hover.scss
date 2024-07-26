@@ -1,0 +1,38 @@
+.h-text{
+    div{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        padding: 0 1rem;
+        z-index: 10;
+    }
+    span{
+        transition: .3s ease;
+        transition-property: bottom, top, opacity;
+        &:first-child{
+            position: relative;
+            top: 0;
+            opacity: 1;
+        }
+        &:last-child{
+            position: absolute;
+            bottom: -2rem;
+            opacity: 0;
+        }
+    }
+    &:hover{
+        span{
+            &:last-child{
+                bottom: clamp(0.015rem, 0.015vw,0.75rem);
+                opacity: 1;
+            }
+            &:first-child{
+                top: -2rem;
+                opacity: 0;
+            }
+        }
+    }
+}

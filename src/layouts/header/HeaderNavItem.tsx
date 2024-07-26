@@ -11,7 +11,7 @@ const HeaderNavItem = ({ text, link }: IHeaderNavItem ):JSX.Element => {
 
     return (
         <motion.li className={isActive ? 'active-route' : ''}>
-            <NavLink to={ link }>
+            <NavLink className='h-text' to={ link }>
                 <div>
                     <span>{ text }</span>
                     <span>{ text }</span>
