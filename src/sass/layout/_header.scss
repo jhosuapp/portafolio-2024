@@ -66,7 +66,7 @@
         color: fun.color('primary');
         padding: 1.25rem 2rem;
         text-transform: uppercase;
-        font-size: clamp(1.8rem, 3.5vh, 3rem);
+        font-size: clamp(1.8rem, 3vh, 3rem);
         position: relative;
         z-index: 2;
     }
@@ -87,6 +87,25 @@
             right: 2.5rem;
             border-radius: 10rem;
         }
+    }
+}
+
+.header__cta{
+    background-color: fun.color('primary');
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    align-items: center;
+    div{
+        justify-content: flex-start;
+    }
+    span{
+        color: fun.color('white');
+    }
+    img{
+        object-fit: contain;
     }
 }
 
@@ -111,14 +130,20 @@
         left: 0;
         top: 0;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         height: 100svh;
+        max-height: 100svh;
+        padding: 8rem 0 2rem;
+        overflow-y: auto;
         ul{
             max-width: 90%;
         }
         a{
             font-size: 1.6rem;
         }
+    }
+    .header__cta{
+        max-width: 90%;
     }
 }

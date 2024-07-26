@@ -5,8 +5,6 @@ const Icon = ({ src, width, height, alt }:IIconProps ):JSX.Element => {
 
     const isDesk = useMediaQuery({ breakpoint: 991 });
 
-    console.log(isDesk);
-
     return (
         <img 
             src={ src } 
