@@ -1,0 +1,66 @@
+@use '../base/functions' as fun;
+
+.btn {
+    outline: inherit;
+    border: none;
+    font-size: clamp(1rem, 1vw,1.5rem);
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: clamp(1rem, 0.75vw, 1.5rem) 2rem;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: 0px 3px 9px rgb(223, 223, 223);
+
+    & > div{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        padding: 0 10px;
+    }
+    span{
+        transition: .5s ease;
+        transition-property: bottom, top;
+        &:first-child{
+            position: relative;
+            top: 0;
+        }
+        &:last-child{
+            position: absolute;
+            bottom: -2rem;
+        }
+    }
+    &--hover{
+        &:hover{
+            span{
+                &:last-child{
+                    bottom: clamp(0.015rem, 0.015vw,0.75rem);
+                }
+                &:first-child{
+                    top: -20px;
+                }
+            }
+        }
+    }
+    &--primary{
+        background-color: fun.color('primary');
+        color: fun.color('white');
+    }
+    &--secondary{
+        background-color: fun.color('white');
+        color: fun.color('primary');
+    }
+}
+
+
+@media(max-width: fun.breakpoints('desktop')){
+    // .btn{
+    //     font-size: clamp(1rem,1vw,1.5rem);
+    // }
+}

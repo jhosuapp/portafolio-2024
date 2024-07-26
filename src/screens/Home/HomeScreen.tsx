@@ -1,7 +1,7 @@
 const HomeScreen = ():JSX.Element => {
     return (
         <>
-            <p>Hola mundo</p>
+            <p>hola mundo</p>
         </>
     )
 }
