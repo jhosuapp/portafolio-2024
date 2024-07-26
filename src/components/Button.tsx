@@ -1,9 +1,16 @@
-const Button = ():JSX.Element => {
+//Types
+import { IButtonProps } from '../models';
+
+
+const Button = ( { Text, HoverText, className, ...attributes }:IButtonProps ):JSX.Element => {
     return (
-        <button className="btn btn--primary">
+        <button 
+            className={`btn ${className}`}
+            { ...attributes }
+        >
             <div>
-                <span>LET'S TALK</span>
-                <span>close</span>
+                <span>{ Text }</span>
+                <span>{ HoverText }</span>
             </div>
         </button>
     )
