@@ -91,6 +91,13 @@
                 top: -2rem;
             }
         }
+        b{
+            width: 200px;
+            height: 200px;
+        }       
+        &.btn--secondary{
+            color: fun.color('white');
+        }
     }
 }
 

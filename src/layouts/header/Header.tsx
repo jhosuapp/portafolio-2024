@@ -16,6 +16,7 @@ const Header = ():JSX.Element => {
             {/* Nav */}
             <HeaderNav />
             {/* Nav */}
+            
         </header>
     )
 }

@@ -109,6 +109,13 @@
     }
 }
 
+.header__group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 @media(max-width: fun.breakpoints('ipad-big')){
     .header{
         padding: 2rem var.$limit-padding-mobile;
@@ -123,7 +130,6 @@
         z-index: 1;
     }
     .header__nav{
-        background-color: rgb(0,0,0, .25);
         padding: 0;
         max-width: 100%;
         width: 100%;
@@ -145,5 +151,8 @@
     }
     .header__cta{
         max-width: 90%;
+    }
+    .header__group{
+        align-items: center;
     }
 }

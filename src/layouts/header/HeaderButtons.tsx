@@ -1,6 +1,12 @@
 import { Button } from '../../components';
+import { useHeader } from '../../store/';
 
 const HeaderButtons = ():JSX.Element => {
+
+    const { hamburger, setHamburger } = useHeader(state => state);
+
+    console.log(hamburger);
+
     return (
         <div className="header__buttons">
             <Button 
@@ -12,9 +18,10 @@ const HeaderButtons = ():JSX.Element => {
                 } }
             />
             <Button 
-                className='btn--secondary btn--hover-dot'
+                className={`btn--secondary btn--hover-dot ${hamburger ? 'active' : ''}`}
                 Text='MENU'
                 HoverText='CLOSE'
+                onClick={ () => setHamburger(!hamburger) }
             />
         </div>
     )
