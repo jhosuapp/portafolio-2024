@@ -3,7 +3,7 @@ $palette:(
     'white': #fff,
     'black': #000,
     'primary': #2B2E3A,
-    'secondary': #C0DF40,
+    'secondary': #E6E7FE,
     'bg': #F0F1FA,
 );
 //BREAKPOINTS
@@ -18,6 +18,6 @@ $breakpoints: (
 //OTHERS
 $transition-duration: 0.3s;
 $limit-width: 1300px;
-$height-header: 65px;
+$height-header: clamp(5rem, 7.5vw, 10rem);
 $limit-padding: 7.5rem;
 $limit-padding-mobile: 5%;

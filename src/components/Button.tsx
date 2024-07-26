@@ -1,7 +1,6 @@
 //Types
 import { IButtonProps } from '../models';
 
-
 const Button = ( { Text, HoverText, className, ...attributes }:IButtonProps ):JSX.Element => {
     return (
         <button 
