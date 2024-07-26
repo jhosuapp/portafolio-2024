@@ -12,6 +12,9 @@ const Button = ( { Text, HoverText, className, ...attributes }:IButtonProps ):JS
                 <span>{ Text }</span>
                 <span>{ HoverText }</span>
             </div>
+            <div>
+                <b></b>
+            </div>
         </button>
     )
 }
