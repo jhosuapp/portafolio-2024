@@ -1,10 +1,11 @@
 @use '../base/functions' as fun;
+@use '../base/variables' as var;
 
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 7.5rem;
+    padding: 3rem var.$limit-padding;
     position: fixed;
     width: 100%;
     &__buttons {
@@ -21,7 +22,7 @@
 
 @media(max-width: fun.breakpoints('ipad-big')){
     .header{
-        padding: 2rem 5%;
+        padding: 2rem var.$limit-padding-mobile;
         &__logo{
             font-size: 1.8rem;
         }

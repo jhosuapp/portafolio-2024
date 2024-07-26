@@ -1,7 +1,11 @@
+import { Container } from "../../components";
+
 const HomeScreen = ():JSX.Element => {
     return (
         <>
-            <p>hola mundo</p>
+            <Container className="ctn ctn--top">
+                <p>hola mundo</p>
+            </Container>
         </>
     )
 }
