@@ -24,22 +24,17 @@ const variantsHeaderParent = {
     }
 };
 
-const variantsHeaderNav = {
+const variantsHeaderBg = {
     open: {
-        y: 0,
         opacity: 1,
-        transition: {
-            y: { stiffness: 1000, velocity: -100 },
-        }
     },
-    closed: {
-        y: 50,
+    close: {
         opacity: 0,
         transition: {
-            y: { stiffness: 1000 }
+            delay: 0.2
         }
     }
 };
 
 
-export { variantsHeaderChildren, variantsHeaderParent, variantsHeaderNav }
+export { variantsHeaderChildren, variantsHeaderParent, variantsHeaderBg }

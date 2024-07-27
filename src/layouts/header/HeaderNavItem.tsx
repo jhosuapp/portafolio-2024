@@ -4,11 +4,14 @@ import { motion } from "framer-motion";
 import { IHeaderNavItem } from '../../models';
 //Variants
 import { variantsHeaderChildren } from '../../variants';
+//Store
+import { useHeader } from '../../store/';
 
 const HeaderNavItem = ({ text, link }: IHeaderNavItem ):JSX.Element => {
 
+    const { hamburger, setHamburger } = useHeader(state => state);
+    //Validate if current route is equal to url
     const match = useMatch(link);
-  
     const isActive = match !== null;
 
     return (
@@ -16,6 +19,7 @@ const HeaderNavItem = ({ text, link }: IHeaderNavItem ):JSX.Element => {
             variants={ variantsHeaderChildren }
             className={isActive ? 'active-route' : ''}
             whileTap={{ scale: 0.95 }}
+            onClick={ () => setHamburger(!hamburger) }
         >
             <NavLink className='h-text fullwidth' to={ link }>
                 <div>

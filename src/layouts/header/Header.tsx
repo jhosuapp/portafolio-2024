@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HeaderButtons } from './HeaderButtons';
 import { HeaderNav } from "./HeaderNav";
+import { HeaderBg } from './HeaderBg';
 
 const Header = ():JSX.Element => {
     return (
@@ -16,7 +17,9 @@ const Header = ():JSX.Element => {
             {/* Nav */}
             <HeaderNav />
             {/* Nav */}
-            
+            {/* Bg */}
+            <HeaderBg />
+            {/* Bg */}
         </header>
     )
 }

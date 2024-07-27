@@ -4,7 +4,7 @@ import { HeaderNavCta } from './HeaderNavCta';
 //Store
 import { useHeader } from '../../store'; 
 //Variant
-import { variantsHeaderParent, variantsHeaderNav } from '../../variants';
+import { variantsHeaderParent, variantsHeaderChildren } from '../../variants';
 
 const HeaderNav = ():JSX.Element => {
 
@@ -14,7 +14,7 @@ const HeaderNav = ():JSX.Element => {
         <motion.nav 
             className='header__nav'
             animate={hamburger ? "open" : "closed"}
-            variants={ variantsHeaderNav }
+            variants={ variantsHeaderChildren }
         >
             <motion.ul variants={ variantsHeaderParent }>
                 <HeaderNavItem text='HOME' link='/' />

@@ -5,8 +5,6 @@ const HeaderButtons = ():JSX.Element => {
 
     const { hamburger, setHamburger } = useHeader(state => state);
 
-    console.log(hamburger);
-
     return (
         <div className="header__buttons">
             <Button 
