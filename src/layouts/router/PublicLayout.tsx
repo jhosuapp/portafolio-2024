@@ -6,7 +6,8 @@ const PublicLayout = ():JSX.Element =>{
     return(
         <>
             <Header />
-            <Outlet />
+            
+            {<Outlet />}
         </>
     );
 }

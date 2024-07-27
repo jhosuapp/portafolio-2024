@@ -1,13 +1,13 @@
-import { Container } from "../../components";
+import { Container, Transition } from "../../components";
 
-const HomeScreen = ():JSX.Element => {
+const HomeScreen = Transition(() => {
     return (
         <>
-            <Container className="ctn ctn--top">
+            <Container style={{ height: '200vh' }} className="ctn ctn--top">
                 <p>hola mundo</p>
             </Container>
         </>
     )
-}
+})
 
 export { HomeScreen }
