@@ -2,7 +2,7 @@ import { Delayed } from "../../components";
 
 const Contact = ():JSX.Element => {
     return (
-        <Delayed delay={ 1000 }>
+        <Delayed>
             <p>Hola contact</p>
         </Delayed>
     )

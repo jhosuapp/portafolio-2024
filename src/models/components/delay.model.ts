@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
 export type IDelay = {
-    delay: number;
+    delay?: number;
     children: ReactNode
 }

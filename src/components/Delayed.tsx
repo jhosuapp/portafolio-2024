@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { IDelay } from '../models';
 
-const Delayed = ({ children, delay }:IDelay) => {
+const Delayed = ({ children, delay = 2000 }:IDelay) => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
