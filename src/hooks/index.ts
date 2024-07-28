@@ -1,1 +1,1 @@
-export * from './Mediaquery/useMediaquery'
+export * from './Mediaquery/useMediaquery';
