@@ -1,10 +1,10 @@
 
 //React hooks
 import { Outlet } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 //Components and store
 import { Header } from '../index';
-import { Transition } from '../../components';
+import { Transition, ProgressBar } from '../../components';
 import { useLoader } from '../../store';
 
 const PublicLayout = ():JSX.Element =>{
@@ -20,6 +20,8 @@ const PublicLayout = ():JSX.Element =>{
     return(
         <>
             <Transition />
+
+            <ProgressBar />
 
             <Header />
             

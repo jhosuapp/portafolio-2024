@@ -1,0 +1,11 @@
+@use '../base/functions' as fun;
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: fun.color('primary');
+  transform-origin: 0%;
+}
