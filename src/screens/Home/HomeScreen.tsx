@@ -1,6 +1,6 @@
-import { Container, Transition } from "../../components";
+import { Container } from "../../components";
 
-const HomeScreen = Transition(() => {
+const HomeScreen = () => {
     return (
         <>
             <Container style={{ height: '200vh' }} className="ctn ctn--top">
@@ -8,6 +8,6 @@ const HomeScreen = Transition(() => {
             </Container>
         </>
     )
-})
+}
 
 export { HomeScreen }

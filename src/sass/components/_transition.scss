@@ -1,17 +1,18 @@
-.slide-in,
-.slide-out {
+.slide-in{
     position: fixed;
-    left: 0;
+    left: -50%;
     top: 0;
-    width: 100%;
+    width: 200%;
     height: 100vh;
     background-color: #0f0f0f;
+    transition: .5s ease all;
+    z-index: 100;
+    &.remove-animation{
+        transform: scaleX(0) !important;
+        transform-origin: left;
+    }
 }
 
 .slide-in{
     transform-origin: right;
-}
-
-.slide-out {
-    transform-origin: left;
 }

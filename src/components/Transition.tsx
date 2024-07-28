@@ -1,28 +1,29 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const Transition = (OgComponent) => {
-    
-    return () => (
-        <>
-            <OgComponent />
-            
-            {/* <motion.div
-                className='slide-in'
-                initial={ { scaleX: 1 } }
-                animate={ { scaleX: 0 } }
-                exit={ { scaleX: 1 } }
-                transition={ { duration: 1, ease: [0.22, 1, 0.36, 1] } }
-            /> */}
+const Transition = () => {
+    const location = useLocation();
+    const nodeTransition = useRef<HTMLDivElement>(null);
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            nodeTransition.current && nodeTransition.current.classList.add('remove-animation');
+        },1000);
+    }, [location]);
+
+    return (
+        <AnimatePresence mode='wait'>
             <motion.div
-                className='slide-out'
-                key="transition"
-                initial={ { scaleX: 1 } }
-                animate={ { scaleX: 0 } }
-                exit={ { scaleX: 0 } }
-                transition={ { duration: 1, ease: [0.22, 1, 0.36, 1] } }
+                className='slide-in'
+                ref={ nodeTransition }
+                key={ location.pathname }
+                initial={ { scaleX: 0 } }
+                animate={ { scaleX: 1 } }
+                transition={{ duration: 0.5 }}
             />
-        </>
-    )
-}
+        </AnimatePresence>
+    );
+};
 
-export { Transition }
+export { Transition };
