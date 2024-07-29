@@ -8,6 +8,14 @@
     padding: 3rem var.$limit-padding;
     position: fixed;
     width: 100%;
+    nav{
+        pointer-events: none;
+    }
+    &.active-hamburger{ 
+        nav{
+            pointer-events: inherit;
+        }
+    }
 }
 
 .header__buttons{
@@ -23,10 +31,14 @@
 }
 
 .header__buttons,
-.header__logo,
-.header__nav{
+.header__logo{
     position: relative;
     z-index: 9;
+}
+
+.header__nav{
+    position: relative;
+    z-index: 8;
 }
 
 .header__nav{
@@ -37,7 +49,6 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    pointer-events: none;
     ul{
         background-color: fun.color('white');
         width: 100%;
@@ -45,7 +56,6 @@
         list-style: none;
         padding: 2rem 0.5rem;
         border-radius: 1.5rem;
-        pointer-events: all;
     }
     li{
         margin-bottom: 0.5rem;
@@ -107,7 +117,6 @@
     max-width: 30rem;
     display: flex;
     align-items: center;
-    pointer-events: all;
     div{
         justify-content: flex-start;
     }
@@ -137,6 +146,11 @@
 @media(max-width: fun.breakpoints('ipad-big')){
     .header{
         padding: 2rem var.$limit-padding-mobile;
+        &.active-hamburger{ 
+            .header__logo{
+                color: fun.color('white');
+            }
+        }
     }
     .header__logo{
         font-size: 1.8rem;

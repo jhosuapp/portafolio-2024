@@ -4,3 +4,4 @@ export * from './Icon';
 export * from './Transition';
 export * from './Delayed';
 export * from './ProgressBar';
+export * from './Loader';
