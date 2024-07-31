@@ -4,7 +4,7 @@ type IArgumentsDelay = {
     delay: number,
 }
 
-const useDelay = create<IArgumentsDelay>()((set) => ({
+const useDelay = create<IArgumentsDelay>()(() => ({
     //Default values
     delay: 2000
 }));

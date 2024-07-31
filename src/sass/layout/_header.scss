@@ -8,6 +8,7 @@
     padding: 3rem var.$limit-padding;
     position: fixed;
     width: 100%;
+    z-index: 99;
     nav{
         pointer-events: none;
     }
