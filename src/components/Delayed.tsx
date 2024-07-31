@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { IDelay } from '../models';
+import { useDelay } from '../store';
 
-const Delayed = ({ children, delay = 2000 }:IDelay) => {
+const Delayed = ({ children }:IDelay) => {
     const [show, setShow] = useState(false);
+    const { delay } = useDelay(state => state);
 
     useEffect(() => {
         const timer = setTimeout(() => {

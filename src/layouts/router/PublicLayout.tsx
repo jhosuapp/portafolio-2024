@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 //Components and store
 import { Header } from '../index';
-import { Transition, ProgressBar, Loader } from '../../components';
+import { Transition, ProgressBar, Loader, ScrollSmoth } from '../../components';
 import { useLoader } from '../../store';
 
 const PublicLayout = ():JSX.Element =>{
@@ -19,8 +19,6 @@ const PublicLayout = ():JSX.Element =>{
         });
     }, []);
 
-    console.log(loaderComponent);
-
     return(
         <>
             {!loaderComponent && <Loader counter={ counter } />}
@@ -31,7 +29,11 @@ const PublicLayout = ():JSX.Element =>{
 
             <Header />
             
-            {isLoad && <Outlet />} 
+            {isLoad && 
+                <ScrollSmoth>
+                    <Outlet />
+                </ScrollSmoth>
+            } 
         </>
     );
 }

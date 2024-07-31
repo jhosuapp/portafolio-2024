@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useLoader } from "../store";
+import { useDelay } from "../store";
 
 const Transition = () => {
-    const { isLoad } = useLoader(state => state);
+    const { delay } = useDelay(state => state);
     //Get location to dinamic key in motion
     const location = useLocation();
     const nodeTransition = useRef<HTMLDivElement>(null);
@@ -14,7 +14,7 @@ const Transition = () => {
         setTimeout(()=>{
             nodeTransition.current && nodeTransition.current.classList.add('remove-animation');
             nodeTransitionParagraph.current && nodeTransitionParagraph.current.classList.add('remove-animation');
-        },2000);
+        }, delay);
     }, [location]);
 
     return (

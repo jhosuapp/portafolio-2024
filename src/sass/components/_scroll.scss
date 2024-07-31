@@ -18,9 +18,9 @@ body{
     }
     
     &::-webkit-scrollbar-thumb {
-        background-color: f.color('fifthy');
+        background-color: f.color('primary');
         border-radius: 20px;
-        border: 5px solid f.color('white');
+        border: 5px solid f.color('bg');
     }
     &::-webkit-scrollbar-track {
         border-radius: 10px; 
