@@ -13,8 +13,11 @@
         pointer-events: none;
     }
     &.active-hamburger{ 
+
         nav{
-            pointer-events: inherit;
+            ul, & > div a{
+                pointer-events: all;
+            }
         }
     }
 }

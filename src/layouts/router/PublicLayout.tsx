@@ -6,18 +6,28 @@ import { useEffect, useState } from 'react';
 import { Header } from '../index';
 import { Transition, ProgressBar, Loader, ScrollSmoth } from '../../components';
 import { useLoader } from '../../store';
+import { useMediaQuery } from '../../hooks';
 
 const PublicLayout = ():JSX.Element =>{
 
     const { isLoad, setIsLoad, loaderComponent } = useLoader(state => state);
     const [counter, setCounter] = useState<number>(100);
+    const isDesk = useMediaQuery({ breakpoint: 991 });
 
-    useEffect(()=>{
-        window.addEventListener('load', ()=>{
+    useEffect(() => {
+        const handleLoadPage = () => {
             setIsLoad();
             setCounter(1);
-        });
-    }, []);
+        };
+        //Validate if dom loaded
+        if (document.readyState === 'interactive' || document.readyState === 'complete') {
+            handleLoadPage();
+        } 
+        //Unmount listener
+        return () => {
+            window.removeEventListener('load', handleLoadPage);
+        };
+    }, [document.readyState]);
 
     return(
         <>
@@ -29,10 +39,13 @@ const PublicLayout = ():JSX.Element =>{
 
             <Header />
             
-            {isLoad && 
-                <ScrollSmoth>
+            {isLoad && isDesk ? (
+                    <ScrollSmoth>
+                        <Outlet />
+                    </ScrollSmoth>
+                ) : (
                     <Outlet />
-                </ScrollSmoth>
+                )
             } 
         </>
     );
