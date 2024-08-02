@@ -8,12 +8,10 @@ const Transition = () => {
     //Get location to dinamic key in motion
     const location = useLocation();
     const nodeTransition = useRef<HTMLDivElement>(null);
-    const nodeTransitionParagraph = useRef<HTMLDivElement>(null);
     //Remove animation
     useEffect(()=>{
         setTimeout(()=>{
             nodeTransition.current && nodeTransition.current.classList.add('remove-animation');
-            nodeTransitionParagraph.current && nodeTransitionParagraph.current.classList.add('remove-animation');
         }, delay);
     }, [location]);
 

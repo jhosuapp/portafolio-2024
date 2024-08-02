@@ -3,7 +3,7 @@
 import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 //Components and store
-import { Header } from '../index';
+import { Header, Footer } from '../index';
 import { Transition, ProgressBar, Loader, ScrollSmoth } from '../../components';
 import { useLoader } from '../../store';
 import { useMediaQuery } from '../../hooks';
@@ -42,11 +42,16 @@ const PublicLayout = ():JSX.Element =>{
             {isLoad && isDesk ? (
                     <ScrollSmoth>
                         <Outlet />
+                        <Footer />
                     </ScrollSmoth>
                 ) : (
-                    <Outlet />
+                    <>
+                        <Outlet />
+                        <Footer/>
+                    </>
                 )
             } 
+
         </>
     );
 }
