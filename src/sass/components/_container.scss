@@ -12,6 +12,9 @@ body{
     &--top{
         padding-top: clamp(5rem, 7.5vw, 10rem);
     }
+    &--height{
+        min-height: 100vh;
+    }
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){

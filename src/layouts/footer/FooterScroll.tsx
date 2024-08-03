@@ -1,10 +1,20 @@
 
 
+import { useLocation } from "react-router-dom";
 import { useMediaQuery } from "../../hooks/";
+import { useEffect } from "react";
 
 const FooterScroll = ():JSX.Element => {
 
-    const isDesk = useMediaQuery({breakpoint: 991 })
+    const isDesk = useMediaQuery({breakpoint: 991 });
+    const location = useLocation();
+
+    useEffect(()=>{
+        window.addEventListener('wheel', (e)=>{
+            console.log(e);
+        })
+    },[]);
+
 
     return (
         <section className="footer__scroll">
@@ -12,7 +22,7 @@ const FooterScroll = ():JSX.Element => {
                 <p className="footer__scroll__text">Keep scrolling to learn more</p>
             </article>
             <article>
-                <p>Contact me!</p>
+                <p>{location.pathname == '/contact' ? 'Contact me!' : 'Home'}</p>
                 <div>
                     <p className="footer__scroll__text">NEXT PAGE</p>
                     <div className="footer__scroll__progress"></div>

@@ -1,9 +1,11 @@
-import { Delayed } from "../../components";
+import { Delayed, Container } from "../../components";
 
 const Contact = ():JSX.Element => {
     return (
         <Delayed>
-            <p>Hola contact</p>
+            <Container className="ctn ctn--top ctn--height">
+                <p>Hola contact</p>
+            </Container>
         </Delayed>
     )
 }
