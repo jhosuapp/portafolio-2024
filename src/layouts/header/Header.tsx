@@ -12,7 +12,7 @@ const Header = ():JSX.Element => {
         <header className={ `header ${ hamburger ? 'active-hamburger' : '' }` }>
             {/* Logo */}
             <Link className="header__logo" to={'/'}>
-                Jhosuapp
+                Jhosuapp's
             </Link>
             {/* Logo */}
             {/* Buttons */}
