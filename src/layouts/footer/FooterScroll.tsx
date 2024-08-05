@@ -9,11 +9,11 @@ const FooterScroll = ():JSX.Element => {
     const isDesk = useMediaQuery({breakpoint: 991 });
     const location = useLocation();
 
-    useEffect(()=>{
-        window.addEventListener('wheel', (e)=>{
-            console.log(e);
-        })
-    },[]);
+    // useEffect(()=>{
+    //     window.addEventListener('wheel', (e)=>{
+    //         console.log(e);
+    //     })
+    // },[]);
 
 
     return (

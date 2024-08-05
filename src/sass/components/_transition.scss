@@ -27,12 +27,11 @@
     background-color: fun.color('secondary');
     z-index: 1;
     pointer-events: none;
-    // transition: .3s ease all;
     &.remove-animation{
         opacity: 0 !important;
     }
     p{
         text-transform: uppercase;
-        font-size: 2vw;
+        font-size: 3vw;
     }
 }

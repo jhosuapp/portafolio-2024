@@ -19,7 +19,6 @@ const ScrollSmoth = ({ children }: IScrollSmoth ):JSX.Element => {
                 dy = sy;
     
             if(main.current){
-                console.log(main.current.clientHeight);
                 body.style.height = main.current.clientHeight + 'px';
         
                 main.current.style.position = 'fixed';
