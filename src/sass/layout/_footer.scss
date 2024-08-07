@@ -18,6 +18,15 @@
         width: 50%;
         height: 2px;
         background-color: rgb(255,255,255, .5);
+        position: relative;
+        overflow: hidden;
+        div {
+            position: absolute;
+            height: 100%;
+            background-color: fun.color('secondary');
+            width: 0;
+            transition: .5s ease width;
+        }
     }
     article:first-child {
         max-width: 10vw;
