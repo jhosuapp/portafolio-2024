@@ -7,3 +7,4 @@ export * from './ProgressBar';
 export * from './Loader';
 export * from './ScrollSmoth';
 export * from './AnimateLine';
+export * from './Cursor';

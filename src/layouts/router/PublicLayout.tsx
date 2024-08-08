@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 //Components and store
 import { Header, Footer } from '../index';
-import { Transition, ProgressBar, Loader, ScrollSmoth } from '../../components';
+import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor } from '../../components';
 import { useLoader } from '../../store';
 import { useMediaQuery } from '../../hooks';
 
@@ -35,9 +35,11 @@ const PublicLayout = ():JSX.Element =>{
 
             <Transition />
 
-            <ProgressBar />
+            {!isDesk && <ProgressBar />}
 
             <Header />
+
+            {isDesk && <Cursor />}
             
             {isLoad && isDesk ? (
                     <ScrollSmoth>
