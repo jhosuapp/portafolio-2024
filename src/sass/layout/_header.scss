@@ -28,7 +28,7 @@
 }
 
 .header__logo{
-    font-size: clamp(1.5rem, 2vw, 3rem);
+    font-size: clamp(1.5rem, 2vw, 2vw);
     font-weight: 500;
     text-transform: uppercase;
     color: fun.color('primary');
@@ -89,7 +89,7 @@
         color: fun.color('primary');
         padding: 1.25rem 2rem;
         text-transform: uppercase;
-        font-size: clamp(1.8rem, 3vh, 3rem);
+        font-size: clamp(1.8rem, 3vh, 3vh);
         position: relative;
         z-index: 2;
     }

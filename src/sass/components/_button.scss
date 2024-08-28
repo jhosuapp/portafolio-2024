@@ -3,10 +3,10 @@
 .btn {
     outline: inherit;
     border: none;
-    font-size: clamp(1rem, 1vw,1.5rem);
+    font-size: clamp(1rem, 1vw,1vw);
     text-transform: uppercase;
     font-weight: 500;
-    padding: clamp(1rem, 0.75vw, 1.5rem) 2rem;
+    padding: clamp(1rem, 0.75vw, 1vw) 2rem;
     padding-right: 3rem;
     border-radius: 100rem;
     display: flex;

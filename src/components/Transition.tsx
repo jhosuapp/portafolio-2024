@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDelay } from "../store";
+import React from 'react';
 
-const Transition = () => {
+const Transition = React.memo(() => {
     const { delay } = useDelay(state => state);
     //Get location to dinamic key in motion
     const location = useLocation();
@@ -47,6 +48,6 @@ const Transition = () => {
             </motion.div>
         </>
     );
-};
+});
 
 export { Transition };

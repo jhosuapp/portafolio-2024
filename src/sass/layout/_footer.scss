@@ -11,7 +11,7 @@
     width: 100%;
     &__text{
         text-transform: uppercase;
-        font-size: clamp(1.5rem, 1vw, 3rem);
+        font-size: clamp(1.5rem, 1vw, 1vw);
         color: fun.color('white');
     }
     &__progress{
@@ -37,7 +37,7 @@
         justify-content: space-between;
         align-items: center;
         & > p{
-            font-size: clamp(2.5rem, 3vw, 4.5rem);
+            font-size: clamp(2.5rem, 3vw, 3vw);
             text-transform: uppercase;
             color: fun.color('white');
         }
@@ -89,7 +89,7 @@
         padding: 2rem var.$limit-padding;
         width: 100%;
         list-style: none;
-        font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+        font-size: clamp(1.3rem, 1.1vw, 1.1vw);
         li, a{
             color: fun.color('primary');
         }

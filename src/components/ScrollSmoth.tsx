@@ -2,8 +2,9 @@ import { useLayoutEffect, useRef } from "react";
 import { useDelay } from  '../store';
 import { useLocation } from "react-router-dom";
 import { IScrollSmoth } from '../models';
+import React from 'react';
 
-const ScrollSmoth = ({ children }: IScrollSmoth ):JSX.Element => {
+const ScrollSmoth = React.memo(({ children }: IScrollSmoth ):JSX.Element => {
     //Delay
     const { delay } = useDelay(state => state);
     const location = useLocation();
@@ -66,6 +67,6 @@ const ScrollSmoth = ({ children }: IScrollSmoth ):JSX.Element => {
             { children }
         </main>
     )
-}
+});
 
 export { ScrollSmoth }
