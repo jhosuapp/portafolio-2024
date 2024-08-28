@@ -1,0 +1,26 @@
+@keyframes loop-rotate{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes open-content{
+    from{
+        height: 3vw;
+    }
+    to{
+        height: 100vh;
+    }
+}
+
+@keyframes close-content{
+    from{
+        height: 100vh;
+    }
+    to{
+        height: 3vw;
+    }
+}

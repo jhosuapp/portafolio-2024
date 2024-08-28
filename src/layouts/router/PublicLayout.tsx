@@ -4,14 +4,14 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 //Components and store
 import { Header, Footer } from '../index';
-import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor } from '../../components';
+import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor, Settings } from '../../components';
 import { useLoader } from '../../store';
 import { useMediaQuery } from '../../hooks';
 
 const PublicLayout = ():JSX.Element =>{
 
     const { isLoad, setIsLoad, loaderComponent } = useLoader(state => state);
-    const [counter, setCounter] = useState<number>(100);
+    const [ counter, setCounter ] = useState<number>(100);
     const isDesk = useMediaQuery({ breakpoint: 991 });
 
     useEffect(() => {
@@ -38,6 +38,8 @@ const PublicLayout = ():JSX.Element =>{
             {!isDesk && <ProgressBar />}
 
             <Header />
+
+            <Settings />
 
             {isDesk && <Cursor />}
             

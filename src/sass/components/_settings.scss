@@ -1,0 +1,82 @@
+@use '../base/functions' as fun;
+@import '../animations/settings';
+
+.settings{
+    position: fixed;
+    left: 0;
+    display: flex;
+    z-index: 100;
+    height: 100vh;
+    align-items: center;
+    article:first-child,
+    article:nth-child(2){
+        position: relative;
+        z-index: 1;
+        max-height: 50vh;
+    }
+    article:first-child{
+        width: 0;
+        overflow: hidden;
+        position: relative;
+        transition: 1s ease width;
+        background-color: fun.color('white');
+        display: flex;
+        align-items: center;
+        min-height: clamp(3rem, 3vw, 3vw);
+    }
+    article:nth-child(2){
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        background-color: fun.color('primary');
+        width: clamp(3rem, 3vw, 3vw);
+        height: clamp(3rem, 3vw, 3vw);
+        padding: 0.75vw;
+        border-radius: 0 1vw 1vw 0;
+        img{
+            width: 100%;
+            animation: loop-rotate 1s infinite linear;
+        }
+    }
+    article:nth-child(3){
+        position: absolute;
+        background-color: rgb(0,0,0, .15);
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+    }
+    &.open{
+        article:nth-child(2),
+        article:first-child{
+            animation: open-content .5s 1 ease forwards;
+            animation-delay: 1.25s;
+        }
+    }
+    &.closed{
+        article:nth-child(2),
+        article:first-child{
+            animation: close-content .5s 1 ease forwards;
+        }
+        article:nth-child(3){
+            pointer-events: none;
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .settings{
+        article:nth-child(2){
+            min-height: 3rem;
+            justify-content: center;
+            padding-top: 0.5rem;
+            img{
+                width: 80%;
+                position: relative;
+            }
+        }
+        &.open{
+
+        }
+    }
+}

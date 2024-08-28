@@ -1,11 +1,12 @@
 import { Delayed, AnimateLine } from "../../components";
-import { HomeHero } from './components/HomeHero';
+import { HomeHero, HomeVision } from './components';
 
 const HomeScreen = () => {
     return (
         <Delayed>
             <AnimateLine />
             <HomeHero />
+            <HomeVision />
         </Delayed>
     )
 }
