@@ -1,0 +1,49 @@
+@use '../base/functions' as fun;
+
+.switch-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    .switch {
+        width: 50%;
+        max-width: 7rem;
+        height: 3.5rem;
+        background-color: fun.color('primary');
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 50px;
+        padding: 0 5px;
+        cursor: pointer;
+    }
+    .switch[data-isOn="true"] {
+        justify-content: flex-end;
+        background-color: fun.color('tertiary');
+    }
+    .handle {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: white;
+        border-radius: 40px;
+    }
+    p{
+        font-size: clamp(1.5rem, 1.3vw, 1.3vw);
+        text-wrap: nowrap;
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .switch-container{
+        .handle {
+            width: 2rem;
+            height: 2rem;
+        }
+        .switch {
+            width: 50%;
+            max-width: 6rem;
+            height: 3rem;
+        }
+    }
+}

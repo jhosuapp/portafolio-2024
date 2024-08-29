@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { variantsSettingsContent, variantsSettingsBg, variantsSettingsContentMobile } from '../variants/index';
 import { useMediaQuery } from '../hooks/index';
+import { Switch } from './Switch';
 
 const Settings = ():JSX.Element => {
 
@@ -22,7 +23,9 @@ const Settings = ():JSX.Element => {
             <motion.article
                 variants={ isDesk ? variantsSettingsContent : variantsSettingsContentMobile }
             >
-                <p>hola content</p>
+                <Switch 
+                    text='Light mode'
+                />
             </motion.article>
             {/* Settings */}
             <motion.article
