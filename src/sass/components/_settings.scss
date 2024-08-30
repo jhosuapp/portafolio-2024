@@ -23,6 +23,13 @@
         display: flex;
         align-items: center;
         min-height: clamp(3rem, 3vw, 3vw);
+        .content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+        }
     }
     article:nth-child(2){
         width: 100%;
@@ -33,6 +40,8 @@
         height: clamp(3rem, 3vw, 3vw);
         padding: 0.75vw;
         border-radius: 0 1vw 1vw 0;
+        border: 1px solid fun.color('white');
+        border-left: none;
         img{
             width: 100%;
             animation: loop-rotate 1s infinite linear;
@@ -51,6 +60,9 @@
         article:first-child{
             animation: open-content .5s 1 ease forwards;
             animation-delay: 1.25s;
+        }
+        article:first-child{
+            max-height: 50vh;
         }
     }
     &.closed{

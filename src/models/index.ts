@@ -9,3 +9,5 @@ export * from './components/switch.model';
 export * from './layout/header.model';
 //Hooks
 export * from './hooks/mediaquery.model';
+//Reducers
+export * from './reducers/switch.model';

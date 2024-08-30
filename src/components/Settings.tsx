@@ -23,9 +23,16 @@ const Settings = ():JSX.Element => {
             <motion.article
                 variants={ isDesk ? variantsSettingsContent : variantsSettingsContentMobile }
             >
-                <Switch 
-                    text='Light mode'
-                />
+                <div className="content">
+                    <Switch 
+                        text='Dark mode'
+                        id='dark-mode'
+                    />
+                    <Switch 
+                        text='Other test'
+                        id='other-test'
+                    />
+                </div>
             </motion.article>
             {/* Settings */}
             <motion.article

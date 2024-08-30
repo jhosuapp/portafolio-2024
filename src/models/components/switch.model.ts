@@ -1,3 +1,4 @@
 export type ISwitch = {
-    text: string
+    text: string,
+    id: string
 }
