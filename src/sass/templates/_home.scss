@@ -21,6 +21,10 @@
             display: flex;
             flex-direction: column;
             margin: auto;
+            color: fun.color('primary');
+            body.dark-mode & {
+                color: fun.color('white');
+            }
         }
         div{
             display: flex;
@@ -76,6 +80,10 @@
             display: flex;
             gap: 0.5rem;
             text-transform: uppercase;
+            color: fun.color('primary');
+            body.dark-mode & {
+                color: fun.color('white');
+            }
             span{
                 font-weight: 500;
             }
@@ -92,6 +100,9 @@
                 position: absolute;
                 content: "";
                 background-color: fun.color('primary');
+                body.dark-mode & {
+                    background-color: fun.color('white');
+                }
             }
             &::before {
                 width: 100%;

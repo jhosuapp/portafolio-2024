@@ -5,6 +5,9 @@ body{
     background-color: fun.color('bg');
     position: relative;
     overflow-x: hidden;
+    &.dark-mode{
+        background-color: fun.color('bg-dark');
+    }
 }
 
 .ctn{

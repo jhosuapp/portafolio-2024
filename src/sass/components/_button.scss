@@ -71,6 +71,9 @@
     &--primary{
         background-color: fun.color('primary');
         color: fun.color('white');
+        body.dark-mode & {
+            background-color: fun.color('tertiary');
+        }
         b{
             background-color: fun.color('white')
         }
@@ -79,7 +82,10 @@
         background-color: fun.color('white');
         color: fun.color('primary');
         b{
-            background-color: fun.color('primary')
+            background-color: fun.color('primary');
+            body.dark-mode & {
+                background-color: fun.color('tertiary');
+            }
         }
     }
     &.active{

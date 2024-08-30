@@ -9,6 +9,9 @@
     background-color: fun.color('primary');
     padding: 6rem var.$limit-padding;
     width: 100%;
+    body.dark-mode & {
+        background-color: fun.color('bg-dark');
+    }
     &__text{
         text-transform: uppercase;
         font-size: clamp(1.5rem, 1vw, 1vw);
@@ -82,6 +85,9 @@
 
 .footer__information{
     background-color: fun.color('bg-footer');
+    body.dark-mode & {
+        background-color: fun.color('white');
+    }
     ul{
         display: flex;
         justify-content: space-between;
