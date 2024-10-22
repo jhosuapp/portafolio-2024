@@ -1,7 +1,7 @@
-import { Button } from '../../components';
-import { useAppDispatch, useAppSelector } from "../../hooks/Redux/useRedux";
+import { Button } from '@/components';
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setHamburger } from "../../store/slices/Header";
+import { setHamburger } from "@/store/slices/Header";
 
 const HeaderButtons = ():JSX.Element => {
 

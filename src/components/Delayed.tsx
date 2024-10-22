@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { IDelay } from '../models';
-import { useAppSelector } from '../hooks/Redux/useRedux';
+import { IDelay } from '@/models';
+import { useAppSelector } from '@/hooks';
 
 
 const Delayed = ({ children }:IDelay) => {

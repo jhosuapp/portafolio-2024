@@ -1,7 +1,7 @@
 
 
 import { useLocation, useNavigate } from "react-router-dom";
-import { useMediaQuery } from "../../hooks/";
+import { useMediaQuery } from "@/hooks/";
 import { useEffect, useRef, useState } from "react";
 
 const FooterScroll = ():JSX.Element => {

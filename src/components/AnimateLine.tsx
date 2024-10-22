@@ -1,6 +1,6 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
 //Hooks
-import { useMediaQuery } from '../hooks';
+import { useMediaQuery } from '@/hooks';
 
 const AnimateLine = ():JSX.Element => {
     const isDesk = useMediaQuery({breakpoint: 991 });

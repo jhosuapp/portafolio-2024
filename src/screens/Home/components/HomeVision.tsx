@@ -1,4 +1,4 @@
-import { Container } from "../../../components/index";
+import { Container } from "@/components/index";
 
 const HomeVision = ():JSX.Element => {
     return (

@@ -1,5 +1,5 @@
-import { useMediaQuery } from "../../../hooks/index";
-import { Container } from "../../../components";
+import { useMediaQuery } from "@/hooks/index";
+import { Container } from "@/components";
 
 const HomeHero = ():JSX.Element => {
 

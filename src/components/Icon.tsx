@@ -1,5 +1,5 @@
-import { IIconProps } from '../models/';
-import { useMediaQuery } from '../hooks';
+import { IIconProps } from '@/models';
+import { useMediaQuery } from '@/hooks';
 
 const Icon = ({ src, width, height, alt }:IIconProps ):JSX.Element => {
 

@@ -1,8 +1,8 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import { ILoader } from '../models';
-import { setLoaderComponent } from '../store/slices/Loader';
-import { useAppDispatch } from '../hooks/Redux/useRedux';
+import { ILoader } from '@/models';
+import { setLoaderComponent } from '@/store/slices/Loader';
+import { useAppDispatch } from '@/hooks';
 import { Dispatch } from '@reduxjs/toolkit';
 
 

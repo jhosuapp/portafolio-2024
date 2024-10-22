@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { Icon } from '../../components';
+import { Icon } from '@/components';
 //Model
-import { IheaderNavCta } from '../../models';
+import { IheaderNavCta } from '@/models';
 //Variants
-import { variantsHeaderChildren } from '../../variants';
+import { variantsHeaderChildren } from '@/variants';
 
 const HeaderNavCta = ( { text, hoverText, background, link, iconType }: IheaderNavCta ):JSX.Element => {
     return (

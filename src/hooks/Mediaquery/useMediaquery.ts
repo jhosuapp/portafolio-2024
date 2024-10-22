@@ -1,4 +1,4 @@
-import { IMediaquery } from '../../models';
+import { IMediaquery } from '@/models';
 import { useEffect, useState } from "react";
   
 const useMediaQuery = ({ breakpoint = 991, type = 'min-width' }: IMediaquery) => {

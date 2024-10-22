@@ -1,13 +1,13 @@
 import { NavLink, useMatch } from "react-router-dom";
 import { motion } from "framer-motion";
 //Types
-import { IHeaderNavItem } from '../../models';
+import { IHeaderNavItem } from '@/models';
 //Variants
-import { variantsHeaderChildren } from '../../variants';
+import { variantsHeaderChildren } from '@/variants';
 //Store
-import { useAppDispatch, useAppSelector } from "../../hooks/Redux/useRedux";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setHamburger } from "../../store/slices/Header";
+import { setHamburger } from "@/store/slices/Header";
 
 const HeaderNavItem = ({ text, link }: IHeaderNavItem ):JSX.Element => {
 

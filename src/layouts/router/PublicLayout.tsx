@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 //Components and store
 import { Header, Footer } from '../index';
-import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor, Settings } from '../../components';
-import { useMediaQuery } from '../../hooks';
-import { useAppDispatch, useAppSelector } from "../../hooks/Redux/useRedux";
-import { setIsLoad } from '../../store/slices/Loader';
+import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor, Settings } from '@/components';
+import { useMediaQuery } from '@/hooks';
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { setIsLoad } from '@/store/slices/Loader';
 import { Dispatch } from "@reduxjs/toolkit";
 
 const PublicLayout = ():JSX.Element =>{

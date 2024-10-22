@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { variantsSettingsContent, variantsSettingsBg, variantsSettingsContentMobile } from '../variants/index';
-import { useMediaQuery } from '../hooks/index';
+import { variantsSettingsContent, variantsSettingsBg, variantsSettingsContentMobile } from '@/variants';
+import { useMediaQuery } from '@/hooks';
 import { Switch } from './Switch';
 
 const Settings = ():JSX.Element => {

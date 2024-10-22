@@ -1,4 +1,4 @@
-import { Delayed, Container } from "../../components";
+import { Delayed, Container } from "@/components";
 
 const Contact = ():JSX.Element => {
     return (

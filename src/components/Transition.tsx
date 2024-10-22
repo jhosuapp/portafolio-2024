@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAppSelector } from '../hooks/Redux/useRedux';
+import { useAppSelector } from '@/hooks';
 import React from 'react';
 
 const Transition = React.memo(() => {

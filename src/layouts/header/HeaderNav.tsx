@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { HeaderNavItem } from './HeaderNavItem';
 import { HeaderNavCta } from './HeaderNavCta';
 //Store
-import { useAppSelector } from '../../hooks/Redux/useRedux';
+import { useAppSelector } from '@/hooks';
 //Variant
-import { variantsHeaderParent, variantsHeaderChildren } from '../../variants';
+import { variantsHeaderParent, variantsHeaderChildren } from '@/variants';
 
 const HeaderNav = ():JSX.Element => {
 

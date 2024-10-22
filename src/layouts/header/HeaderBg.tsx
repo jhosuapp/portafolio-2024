@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 //Store
-import { useAppDispatch, useAppSelector } from "../../hooks/Redux/useRedux";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setHamburger } from "../../store/slices/Header";
+import { setHamburger } from "@/store/slices/Header";
 //Variants
-import { variantsHeaderBg } from '../../variants';
+import { variantsHeaderBg } from '@/variants';
 
 const HeaderBg = ():JSX.Element => {
 

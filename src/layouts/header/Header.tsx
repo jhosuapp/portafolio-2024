@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { HeaderButtons } from './HeaderButtons';
 import { HeaderNav } from "./HeaderNav";
 import { HeaderBg } from './HeaderBg';
-import { useAppSelector } from "../../hooks/Redux/useRedux";
+import { useAppSelector } from "@/hooks";
 
 const Header = ():JSX.Element => {
 
