@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { HeaderButtons } from './HeaderButtons';
 import { HeaderNav } from "./HeaderNav";
 import { HeaderBg } from './HeaderBg';
-import { useHeader } from "../../store";
+import { useAppSelector } from "../../hooks/Redux/useRedux";
 
 const Header = ():JSX.Element => {
 
-    const { hamburger } = useHeader(state => state);
+    const { hamburger } = useAppSelector( state => state.header );
 
     return (
         <header className={ `header ${ hamburger ? 'active-hamburger' : '' }` }>

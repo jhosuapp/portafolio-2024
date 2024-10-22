@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDelay } from "../store";
+import { useAppSelector } from '../hooks/Redux/useRedux';
 import React from 'react';
 
 const Transition = React.memo(() => {
-    const { delay } = useDelay(state => state);
+    const { delay } = useAppSelector( state => state.delay )
     //Get location to dinamic key in motion
     const location = useLocation();
     const nodeTransition = useRef<HTMLDivElement>(null);

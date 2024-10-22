@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 import { HeaderNavItem } from './HeaderNavItem';
 import { HeaderNavCta } from './HeaderNavCta';
 //Store
-import { useHeader } from '../../store'; 
+import { useAppSelector } from '../../hooks/Redux/useRedux';
 //Variant
 import { variantsHeaderParent, variantsHeaderChildren } from '../../variants';
 
 const HeaderNav = ():JSX.Element => {
 
-    const { hamburger } = useHeader(state => state);
+    const { hamburger } = useAppSelector( state => state.header );
 
     return (
         <motion.nav 

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { IDelay } from '../models';
-import { useDelay } from '../store';
+import { useAppSelector } from '../hooks/Redux/useRedux';
+
 
 const Delayed = ({ children }:IDelay) => {
     const [show, setShow] = useState(false);
-    const { delay } = useDelay(state => state);
+    const { delay } = useAppSelector( state => state.delay );
 
     useEffect(() => {
         const timer = setTimeout(() => {

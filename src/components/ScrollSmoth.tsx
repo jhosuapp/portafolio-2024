@@ -1,12 +1,12 @@
 import { useLayoutEffect, useRef } from "react";
-import { useDelay } from  '../store';
 import { useLocation } from "react-router-dom";
 import { IScrollSmoth } from '../models';
 import React from 'react';
+import { useAppSelector } from "../hooks/Redux/useRedux";
 
 const ScrollSmoth = React.memo(({ children }: IScrollSmoth ):JSX.Element => {
     //Delay
-    const { delay } = useDelay(state => state);
+    const { delay } = useAppSelector(state => state.delay);
     const location = useLocation();
     //Main
     const main = useRef<HTMLElement>(null);

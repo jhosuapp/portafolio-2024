@@ -5,7 +5,7 @@
     position: fixed;
     left: 0;
     display: flex;
-    z-index: 100;
+    z-index: 90;
     height: 100vh;
     align-items: center;
     article:first-child,
@@ -79,16 +79,16 @@
 @media(max-width: fun.breakpoints('ipad-big')){
     .settings{
         article:nth-child(2){
-            min-height: 3rem;
+            min-height: 3.5rem;
             justify-content: center;
             padding-top: 0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            width: 3.5rem;
             img{
-                width: 80%;
+                width: 100%;
                 position: relative;
             }
-        }
-        &.open{
-
         }
     }
 }

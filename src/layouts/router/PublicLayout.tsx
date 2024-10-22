@@ -5,18 +5,20 @@ import { useEffect, useState } from 'react';
 //Components and store
 import { Header, Footer } from '../index';
 import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor, Settings } from '../../components';
-import { useLoader } from '../../store';
 import { useMediaQuery } from '../../hooks';
+import { useAppDispatch, useAppSelector } from "../../hooks/Redux/useRedux";
+import { setIsLoad } from '../../store/slices/Loader';
+import { Dispatch } from "@reduxjs/toolkit";
 
 const PublicLayout = ():JSX.Element =>{
-
-    const { isLoad, setIsLoad, loaderComponent } = useLoader(state => state);
+    const { isLoad, loaderComponent } = useAppSelector( state => state.loader );
+    const dispatch: Dispatch<any> = useAppDispatch()
     const [ counter, setCounter ] = useState<number>(100);
     const isDesk = useMediaQuery({ breakpoint: 991 });
 
     useEffect(() => {
         const handleLoadPage = () => {
-            setIsLoad();
+            dispatch(setIsLoad());
             setCounter(1);
         };
         //Validate if dom loaded

@@ -1,15 +1,17 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { ILoader } from '../models';
-import { useLoader } from '../store';
+import { setLoaderComponent } from '../store/slices/Loader';
+import { useAppDispatch } from '../hooks/Redux/useRedux';
+import { Dispatch } from '@reduxjs/toolkit';
 
 
 const Loader = ({ counter }:ILoader):JSX.Element => {
+    const dispatch: Dispatch<any> = useAppDispatch();
     const count = useMotionValue(0);
     const rounded = useTransform(count, Math.round);
     const nodeCounter = useRef<HTMLParagraphElement>(null);
     const nodeProgress =  useRef<HTMLSpanElement>(null);
-    const { setLoaderComponent } = useLoader(state => state);
     //Animation counter
     useEffect(() => {
       const animation = animate(count, 100, { duration: counter });
@@ -27,7 +29,7 @@ const Loader = ({ counter }:ILoader):JSX.Element => {
             if (nodeCounter.current?.textContent == '100') {
                 clearInterval(intervalId);
                 setTimeout(()=>{
-                    setLoaderComponent();
+                    dispatch(setLoaderComponent());
                 },1000);
             }
         }, 100);

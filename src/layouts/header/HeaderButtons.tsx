@@ -1,9 +1,12 @@
 import { Button } from '../../components';
-import { useHeader } from '../../store/';
+import { useAppDispatch, useAppSelector } from "../../hooks/Redux/useRedux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { setHamburger } from "../../store/slices/Header";
 
 const HeaderButtons = ():JSX.Element => {
 
-    const { hamburger, setHamburger } = useHeader(state => state);
+    const { hamburger } = useAppSelector( state => state.header );
+    const dispatch: Dispatch<any> = useAppDispatch()
 
     return (
         <div className="header__buttons">
@@ -19,7 +22,7 @@ const HeaderButtons = ():JSX.Element => {
                 className={`btn--secondary btn--hover-dot ${hamburger ? 'active' : ''}`}
                 Text='MENU'
                 HoverText='CLOSE'
-                onClick={ () => setHamburger(!hamburger) }
+                onClick={ () => dispatch(setHamburger(!hamburger)) }
             />
         </div>
     )
