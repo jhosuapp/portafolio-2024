@@ -7,7 +7,7 @@ const Button = ( { Text, HoverText, className, isDisabled, isLoading, children, 
             className={`
                 btn ${className}
                 ${isDisabled && 'disabled'}
-                ${isLoading && 'loading'}
+                ${isLoading && 'loading disabled'}
                 ${children && 'direction-row'}
             `}
             { ...attributes }

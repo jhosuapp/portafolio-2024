@@ -1,11 +1,23 @@
 import { Delayed, Container, Button, Input, Icon, Text } from "@/components";
+import { useLoginController } from "./Login.controller";
+import { Controller } from "react-hook-form";
 
 
 const LoginScreen = ():JSX.Element => {
+
+    const {
+        control, 
+        handleSubmit,
+        onSubmit,
+        errors,
+        disabledButton,
+    } = useLoginController();
+    
+
     return (
         <Delayed>
             <Container className="login ctn ctn--top ctn--height">
-                <form className="login__form">
+                <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
                         <Text headingType="h1" className="center">
                             Login in J'D
@@ -28,22 +40,42 @@ const LoginScreen = ():JSX.Element => {
                     </fieldset>
 
                     <fieldset>
-                        <Input 
-                            type="email"
-                            placeholder="Email"
+
+                        <Controller
+                            name="email"
+                            control={ control }
+                            render={({ field: { onChange, onBlur, value } }) => (
+                                <Input 
+                                    type="email"
+                                    placeholder="Email"
+                                    onChange={ onChange }
+                                    onBlur={ onBlur }
+                                    value={ value }
+                                    errorMessage={ errors.email?.message }
+                                />
+                            )}
                         />
 
-                        <Input 
-                            type="password"
-                            placeholder="Contraseña"
+                        <Controller
+                            name="password"
+                            control={ control }
+                            render={({ field: { onChange, onBlur, value } }) => (
+                                <Input 
+                                    type="password"
+                                    placeholder="Contraseña"
+                                    onChange={ onChange }
+                                    onBlur={ onBlur }
+                                    value={ value }
+                                    errorMessage={ errors.password?.message }
+                                />
+                            )}
                         />
 
                         <Button 
                             Text="Login"
                             HoverText={`Login now`}
                             className="btn btn--primary h-text"
-                            // isDisabled={ true }
-                            // isLoading={ true }
+                            isLoading={ disabledButton }
                         />
                     </fieldset>
                     <Text className="center">

@@ -25,13 +25,16 @@
                 border-bottom: 2px solid fun.color('bg');
             }
         }
-        button, input{
+        button, input, .error{
             width: 100%;
             max-width: 40rem;
             margin: auto;
         }
         h1{
             margin-bottom: 2rem;
+        }
+        .error{
+            margin-top: -1rem;
         }
     }
 }

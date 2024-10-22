@@ -1,3 +1,9 @@
 import type { InputHTMLAttributes } from 'react';
 
-export type IInputProps = InputHTMLAttributes<HTMLInputElement>;
+export type ICustomPropsInput = {
+    errorMessage?: string;
+}
+
+export type INativePropsInput = InputHTMLAttributes<HTMLInputElement>
+
+export type IInputProps = INativePropsInput & ICustomPropsInput;

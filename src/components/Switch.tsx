@@ -1,5 +1,5 @@
-import React, { useEffect, useReducer } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+// import { motion } from "framer-motion";
 import { ISwitch } from '../models/index';
 
 const Switch = React.memo(({ text, id }:ISwitch):JSX.Element => {

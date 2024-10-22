@@ -1,9 +1,10 @@
 import { IInputProps } from '@/models';
 
-const Input = ({ ...props }:IInputProps ):JSX.Element => {
+const Input = ({ errorMessage, ...props }:IInputProps ):JSX.Element => {
     return (
         <>
             <input { ...props } />
+            {errorMessage && <span className='error'> { errorMessage } </span>}
         </>
     )
 }
