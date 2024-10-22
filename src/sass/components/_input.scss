@@ -1,0 +1,20 @@
+@use '../base/functions' as fun;
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="email"]{
+    outline: inherit;
+    border: none;
+    font-size: clamp(1rem, 1vw,1vw);
+    font-weight: 500;
+    padding: clamp(1rem, 0.75vw, 1vw) 2rem;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}

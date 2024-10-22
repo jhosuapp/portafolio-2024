@@ -1,4 +1,4 @@
-@use '../base/functions' as fun;
+@use '../../base/functions' as fun;
 
 .home-hero{
     display: flex;
@@ -106,10 +106,10 @@
             }
             &::before {
                 width: 100%;
-                height: 0.2em; /* usa una unidad relativa para mantener proporciones */
+                height: 0.2em;
             }
             &::after {
-                width: 0.2em; /* usa una unidad relativa para mantener proporciones */
+                width: 0.2em;
                 height: 100%;
             }
         }

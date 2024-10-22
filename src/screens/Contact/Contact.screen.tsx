@@ -1,6 +1,6 @@
 import { Delayed, Container } from "@/components";
 
-const Contact = ():JSX.Element => {
+const ContactScreen = ():JSX.Element => {
     return (
         <Delayed>
             <Container className="ctn ctn--top ctn--height">
@@ -10,4 +10,4 @@ const Contact = ():JSX.Element => {
     )
 }
 
-export { Contact }
+export { ContactScreen }

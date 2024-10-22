@@ -10,3 +10,4 @@ export * from './AnimateLine';
 export * from './Cursor';
 export * from './Settings';
 export * from './Switch';
+export * from './Input';

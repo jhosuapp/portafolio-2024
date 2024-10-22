@@ -19,7 +19,7 @@ const HeaderNav = ():JSX.Element => {
             <motion.ul variants={ variantsHeaderParent }>
                 <HeaderNavItem text='HOME' link='/' />
                 <HeaderNavItem text='CONTACT' link='/contact' />
-                <HeaderNavItem text='LOGIN' link='/other-page' />
+                <HeaderNavItem text='LOGIN' link='/login' />
             </motion.ul>
             <motion.div className='header__group' variants={ variantsHeaderParent }>
                 <HeaderNavCta 

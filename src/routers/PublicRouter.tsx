@@ -1,4 +1,4 @@
-import { HomeScreen, Contact } from '../screens';
+import { HomeScreen, ContactScreen, LoginScreen } from '../screens';
 
 const PublicRouter = [
     {
@@ -7,7 +7,11 @@ const PublicRouter = [
     },
     {
         path: "/contact",
-        element: <Contact />,
+        element: <ContactScreen />,
+    },
+    {
+        path: "/login",
+        element: <LoginScreen />,
     },
 ];
 
