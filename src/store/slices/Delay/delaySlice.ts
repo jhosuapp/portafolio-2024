@@ -1,10 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+interface DelayState {
+    delay: number;
+}
+
+const initialState: DelayState = {
+    delay: 2000,
+};
 
 export const delaySlice = createSlice({
     name: 'counter',
-    initialState: {
-        delay: 2000
-    },
+    initialState: initialState,
     reducers: {  },
 });
 

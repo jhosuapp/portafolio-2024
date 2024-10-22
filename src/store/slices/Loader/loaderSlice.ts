@@ -1,11 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+interface LoaderState {
+    isLoad: boolean;
+    loaderComponent: boolean;
+}
+
+const initialState: LoaderState = {
+    isLoad: false,
+    loaderComponent: false,
+};
 
 export const loaderSlice = createSlice({
     name: 'counter',
-    initialState: {
-        isLoad: false,
-        loaderComponent: false,
-    },
+    initialState: initialState,
     reducers: { 
         setIsLoad: (state)=>{
             state.isLoad = true;

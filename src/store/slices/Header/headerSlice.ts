@@ -1,10 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+
+interface HeaderState {
+    hamburger: boolean;
+}
+
+const initialState: HeaderState = {
+    hamburger: false,
+};
 
 export const headerSlice = createSlice({
     name: 'counter',
-    initialState: {
-        hamburger: false,
-    },
+    initialState: initialState,
     reducers: { 
         setHamburger: (state, action)=>{
             state.hamburger = action.payload;
