@@ -4,6 +4,8 @@ export type ICustomPropsButton = {
     className?: string;
     Text: string;
     HoverText: string;
+    isDisabled?: boolean;
+    isLoading?: boolean;
 }
 
 export type INativePropsButton = ButtonHTMLAttributes<HTMLButtonElement>;

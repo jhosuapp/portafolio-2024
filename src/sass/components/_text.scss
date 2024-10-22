@@ -1,0 +1,44 @@
+@use '../base/functions' as fun;
+
+.title {
+    font-size: clamp(2rem, 6vh, 5rem);
+}
+
+.paragraph {
+    font-size: clamp(1.6rem, 2vh, 2rem);
+}
+
+.link {
+    position: relative;
+    color: currentColor;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 0.15rem;
+        background-color: currentColor;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        transition: .5s ease width;
+    }
+    &:hover{
+        &::before{
+            width: 0;
+            left: unset;
+            right: 0;
+        }
+    }
+}
+
+.center{
+    text-align: center;
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .title {
+        font-size: 2.6rem;
+    }
+    .paragraph{
+        font-size: 1.4rem;
+    }
+}

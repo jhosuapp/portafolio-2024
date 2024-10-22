@@ -1,17 +1,46 @@
+@use '../../base/functions' as fun;
+
 .login {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 6rem;
     &__form{
         width: 100%;
-        max-width: 30vw;
+        max-width: 40vw;
+        background-color: fun.color('white');
+        padding: 6rem;
+        border-radius: 1rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            border: none;
+            &:first-child{
+                padding-bottom: 3rem;
+                border-bottom: 2px solid fun.color('bg');
+            }
+        }
         button, input{
             width: 100%;
-            max-width: 100%;
+            max-width: 40rem;
+            margin: auto;
+        }
+        h1{
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .login{
+        &__form{
+            max-width: 50rem;
+            padding: 5rem 3rem;
         }
     }
 }

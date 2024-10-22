@@ -6,6 +6,7 @@ export * from './components/loader.model';
 export * from './components/scroll.model';
 export * from './components/switch.model';
 export * from './components/input.model';
+export * from './components/text.model';
 //layout
 export * from './layout/header.model';
 //Hooks

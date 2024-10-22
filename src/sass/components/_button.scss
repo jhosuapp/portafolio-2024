@@ -14,9 +14,16 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-    // box-shadow: 0 0.3rem 0.9rem rgb(223, 223, 223);
     position: relative;
     overflow: hidden;
+    &.disabled{
+        opacity: .7;
+        background-color: grey;
+        pointer-events: none;
+    }
+    &.direction-row{
+        flex-direction: row;
+    }
     & > div:first-child{
         position: relative;
         display: flex;

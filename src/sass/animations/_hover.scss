@@ -29,7 +29,8 @@
             justify-content: flex-start;
         }
     }
-    &:hover{
+    &:hover,
+    &.loading{
         span{
             &:last-child{
                 bottom: clamp(0.015rem, 0.015vw,0.75rem);
