@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
-import { Button } from '@/components/Button';
+import { Button } from '../../src/components/Button';
 import { IButtonProps } from '@/models';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
     
 describe('<Button>', ()=>{
