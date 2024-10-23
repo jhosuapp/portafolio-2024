@@ -44,6 +44,9 @@
         &__form{
             max-width: 50rem;
             padding: 5rem 3rem;
+            .error{
+                margin-top: -1.5rem;
+            }
         }
     }
 }

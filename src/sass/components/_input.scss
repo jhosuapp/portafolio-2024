@@ -28,3 +28,13 @@ input[type="email"]{
         box-shadow: 0 0 0 2px fun.color('secondary');
     }
 }
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="email"]{
+        font-size: 1.2rem;
+    }
+}

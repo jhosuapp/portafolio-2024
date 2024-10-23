@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { delaySlice } from './slices/Delay';
 import { headerSlice } from './slices/Header';
 import { loaderSlice } from './slices/Loader';
+import { authSlice } from './slices/Auth';
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch;
@@ -11,6 +12,7 @@ export const store = configureStore({
     reducer: {
         delay: delaySlice.reducer,
         header: headerSlice.reducer,
-        loader: loaderSlice.reducer
+        loader: loaderSlice.reducer,
+        auth: authSlice.reducer
     },
 });

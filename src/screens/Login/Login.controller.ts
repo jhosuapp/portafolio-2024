@@ -1,3 +1,8 @@
+//Redux
+import { checkingAuth } from "@/store/slices/Auth";
+import { useAppDispatch } from "@/hooks";
+import { Dispatch } from "@reduxjs/toolkit";
+//Other hooks
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -11,6 +16,7 @@ const login = yup.object({
 type LoginType = yup.InferType<typeof login>;
 
 export function useLoginController() {
+    const dispatch:Dispatch<any> = useAppDispatch();
     const [disabledButton, setDisabledButton] = useState<boolean>(false);
 
     const {
@@ -30,7 +36,7 @@ export function useLoginController() {
         setDisabledButton(true);
         console.log(formData);
         try {
-
+            dispatch(checkingAuth(formData.email, formData.password));
         }catch(error) {
 
         }
