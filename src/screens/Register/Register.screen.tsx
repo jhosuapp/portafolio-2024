@@ -28,7 +28,7 @@ const RegisterScreen = ():JSX.Element => {
                     <fieldset>
 
                         <Controller
-                            name="full_name"
+                            name="displayName"
                             control={ control }
                             render={({ field: { onChange, onBlur, value } }) => (
                                 <Input 
@@ -37,7 +37,7 @@ const RegisterScreen = ():JSX.Element => {
                                     onChange={ onChange }
                                     onBlur={ onBlur }
                                     value={ value }
-                                    errorMessage={ errors.full_name?.message }
+                                    errorMessage={ errors.displayName?.message }
                                 />
                             )}
                         />

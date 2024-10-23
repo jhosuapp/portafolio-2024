@@ -31,13 +31,7 @@ export function useLoginController() {
     });
     //Handle submit with email and pass
     const onSubmit = async (formData:LoginType)=>{
-        setDisabledButton(true);
-        console.log(formData);
-        try {
-            dispatch(checkingAuth(formData.email, formData.password));
-        }catch(error) {
-
-        }
+        dispatch(checkingAuth(formData.email, formData.password));
     }
     //Handle click with google sign in
     const handleGoogleSignIn = () => {
