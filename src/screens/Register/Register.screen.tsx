@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Controller } from "react-hook-form";
-import { Delayed, Container, Button, Input, Icon, Text } from "@/components";
-import { useLoginController } from "./Login.controller";
+import { Delayed, Container, Button, Input, Text } from "@/components";
+import { useRegisterController } from "./Register.controller";
 
 
-const LoginScreen = ():JSX.Element => {
+const RegisterScreen = ():JSX.Element => {
 
     const {
         control, 
@@ -12,8 +12,7 @@ const LoginScreen = ():JSX.Element => {
         onSubmit,
         errors,
         disabledButton,
-        handleGoogleSignIn
-    } = useLoginController();
+    } = useRegisterController();
     
 
     return (
@@ -22,30 +21,26 @@ const LoginScreen = ():JSX.Element => {
                 <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
                         <Text headingType="h1" className="center">
-                            Login in J'D
+                            Register in J'D
                         </Text>
-                       
-                        <Button
-                            Text="Continue with google"
-                            HoverText={`Login with google`}
-                            className="btn btn--primary h-text"
-                            onClick={ () => handleGoogleSignIn() }
-                            type="button"
-                            isLoading={ disabledButton }
-                        >
-                            <Icon src={ `/assets/img/google-brands-solid.svg` } width={ 22.5 } height={ 22.5 } alt={`Icon facebook`} />
-                        </Button>
-                        <Button
-                            Text="Continue with facebook"
-                            HoverText={`Login with facebook`}
-                            className="btn btn--primary h-text"
-                            isLoading={ disabledButton }
-                        >
-                            <Icon src={ `/assets/img/facebook-brands-solid.svg` } width={ 22.5 } height={ 25 } alt={`Icon facebook`} />
-                        </Button>
                     </fieldset>
 
                     <fieldset>
+
+                        <Controller
+                            name="full_name"
+                            control={ control }
+                            render={({ field: { onChange, onBlur, value } }) => (
+                                <Input 
+                                    type="text"
+                                    placeholder="Full name"
+                                    onChange={ onChange }
+                                    onBlur={ onBlur }
+                                    value={ value }
+                                    errorMessage={ errors.full_name?.message }
+                                />
+                            )}
+                        />
 
                         <Controller
                             name="email"
@@ -78,14 +73,14 @@ const LoginScreen = ():JSX.Element => {
                         />
 
                         <Button 
-                            Text="Login"
-                            HoverText={`Login now`}
+                            Text="Register"
+                            HoverText={`Register now`}
                             className="btn btn--primary h-text"
                             isLoading={ disabledButton }
                         />
                     </fieldset>
                     <Text className="center">
-                        ¿You don't have an acount? <Link className="link" to={'/register'}>register now</Link>
+                        ¿You have an acount? <Link className="link" to={'/login'}>login now</Link>
                     </Text>
                 </form>
             </Container>
@@ -93,4 +88,4 @@ const LoginScreen = ():JSX.Element => {
     )
 }
 
-export { LoginScreen }
+export { RegisterScreen }

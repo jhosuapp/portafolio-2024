@@ -1,4 +1,4 @@
-import { HomeScreen, ContactScreen, LoginScreen } from '../screens';
+import { HomeScreen, ContactScreen, LoginScreen, RegisterScreen } from '../screens';
 
 const PublicRouter = [
     {
@@ -12,6 +12,10 @@ const PublicRouter = [
     {
         path: "/login",
         element: <LoginScreen />,
+    },
+    {
+        path: "/register",
+        element: <RegisterScreen />,
     },
 ];
 
