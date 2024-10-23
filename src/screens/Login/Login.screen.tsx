@@ -1,6 +1,6 @@
+import { Controller } from "react-hook-form";
 import { Delayed, Container, Button, Input, Icon, Text } from "@/components";
 import { useLoginController } from "./Login.controller";
-import { Controller } from "react-hook-form";
 
 
 const LoginScreen = ():JSX.Element => {
@@ -11,6 +11,7 @@ const LoginScreen = ():JSX.Element => {
         onSubmit,
         errors,
         disabledButton,
+        handleGoogleSignIn
     } = useLoginController();
     
 
@@ -27,6 +28,9 @@ const LoginScreen = ():JSX.Element => {
                             Text="Continue with google"
                             HoverText={`Login with google`}
                             className="btn btn--primary h-text"
+                            onClick={ () => handleGoogleSignIn() }
+                            type="button"
+                            isLoading={ disabledButton }
                         >
                             <Icon src={ `/assets/img/google-brands-solid.svg` } width={ 22.5 } height={ 22.5 } alt={`Icon facebook`} />
                         </Button>
@@ -34,6 +38,7 @@ const LoginScreen = ():JSX.Element => {
                             Text="Continue with facebook"
                             HoverText={`Login with facebook`}
                             className="btn btn--primary h-text"
+                            isLoading={ disabledButton }
                         >
                             <Icon src={ `/assets/img/facebook-brands-solid.svg` } width={ 22.5 } height={ 25 } alt={`Icon facebook`} />
                         </Button>

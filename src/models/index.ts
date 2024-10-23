@@ -13,3 +13,5 @@ export * from './layout/header.model';
 export * from './hooks/mediaquery.model';
 //Reducers
 export * from './reducers/switch.model';
+//Controllers
+export * from './controllers/Login.model';
