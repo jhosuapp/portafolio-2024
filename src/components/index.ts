@@ -12,3 +12,4 @@ export * from './Settings';
 export * from './Switch';
 export * from './Input';
 export * from './Text';
+export * from './Modal';

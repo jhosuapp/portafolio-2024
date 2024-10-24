@@ -10,8 +10,12 @@ import { RegisterSchema, RegisterType } from "@/models";
 
 export function useRegisterController() {
     const dispatch:Dispatch<any> = useAppDispatch();
-    const { status } = useAppSelector(state => state.auth);
+    const { status, errorMessage } = useAppSelector(state => state.auth);
     const [disabledButton, setDisabledButton] = useState<boolean>(false);
+    //Show error when email is invalid
+    useEffect(()=>{
+        errorMessage && setError('email', { message: 'Email already exists or is invalid' });
+    },[errorMessage]);
     //Status request
     useEffect(()=>{
         status === 'checking' ? setDisabledButton(true) : setDisabledButton(false);
@@ -20,7 +24,8 @@ export function useRegisterController() {
     const {
         control,
         handleSubmit,
-        formState: { errors },
+        setError,
+        formState: { errors, isValid },
     } = useForm<RegisterType>({
         mode: "onChange",
         resolver: yupResolver(RegisterSchema),
@@ -41,5 +46,7 @@ export function useRegisterController() {
         onSubmit,
         errors,
         disabledButton,
+        errorMessage,
+        isValid
     }
 }

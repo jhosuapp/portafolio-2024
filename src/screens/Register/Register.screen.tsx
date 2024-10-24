@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Controller } from "react-hook-form";
-import { Delayed, Container, Button, Input, Text } from "@/components";
+import { Delayed, Container, Button, Input, Text, Modal } from "@/components";
 import { useRegisterController } from "./Register.controller";
 
 
@@ -12,6 +12,8 @@ const RegisterScreen = ():JSX.Element => {
         onSubmit,
         errors,
         disabledButton,
+        errorMessage,
+        isValid
     } = useRegisterController();
     
 
@@ -72,11 +74,13 @@ const RegisterScreen = ():JSX.Element => {
                             )}
                         />
 
+
                         <Button 
                             Text="Register"
                             HoverText={`Register now`}
                             className="btn btn--primary h-text"
                             isLoading={ disabledButton }
+                            isDisabled={ !isValid }
                         />
                     </fieldset>
                     <Text className="center">
@@ -84,6 +88,10 @@ const RegisterScreen = ():JSX.Element => {
                     </Text>
                 </form>
             </Container>
+
+            <Modal 
+                errorMessage={ errorMessage }
+            />
         </Delayed>
     )
 }

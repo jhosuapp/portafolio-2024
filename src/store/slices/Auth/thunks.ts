@@ -29,8 +29,10 @@ const startCreatingUserWithEmailPassword = ({ email, password, displayName }:Reg
         dispatch(checkingCredentials());
 
         const result = await registerWithEmailPassword({ email, password, displayName });
+        //Validate error in response
         if(!result.ok) return dispatch(logout( result ));
-        console.log(result)
+        //Logged user if all it's ok
+        dispatch( login( result ) );
     }
 }
 
