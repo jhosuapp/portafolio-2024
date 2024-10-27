@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Controller } from "react-hook-form";
-import { Delayed, Container, Button, Input, Icon, Text } from "@/components";
+import { Delayed, Container, Button, Input, Icon, Text, Modal } from "@/components";
 import { useLoginController } from "./Login.controller";
 
 
@@ -12,7 +12,8 @@ const LoginScreen = ():JSX.Element => {
         onSubmit,
         errors,
         disabledButton,
-        handleGoogleSignIn
+        handleGoogleSignIn,
+        errorMessage
     } = useLoginController();
     
 
@@ -89,6 +90,9 @@ const LoginScreen = ():JSX.Element => {
                     </Text>
                 </form>
             </Container>
+            <Modal 
+                errorMessage={ errorMessage }
+            />
         </Delayed>
     )
 }

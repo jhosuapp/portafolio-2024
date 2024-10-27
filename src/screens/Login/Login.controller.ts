@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 //Redux
-import { checkingAuth, startGoogleSignIn } from "@/store/slices/Auth";
+import { startGoogleSignIn, startLoginWithEmailPassword } from "@/store/slices/Auth";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Dispatch } from "@reduxjs/toolkit";
 //Hooks && models
@@ -11,7 +11,7 @@ import { LoginSchema, LoginType } from "@/models";
 export function useLoginController() {
     const dispatch:Dispatch<any> = useAppDispatch();
     const [disabledButton, setDisabledButton] = useState<boolean>(false);
-    const { status } = useAppSelector( state => state.auth );
+    const { status, errorMessage } = useAppSelector( state => state.auth );
     //Status request
     useEffect(()=>{
         status === 'checking' ? setDisabledButton(true) : setDisabledButton(false);
@@ -31,7 +31,7 @@ export function useLoginController() {
     });
     //Handle submit with email and pass
     const onSubmit = async (formData:LoginType)=>{
-        dispatch(checkingAuth(formData.email, formData.password));
+        dispatch(startLoginWithEmailPassword(formData));
     }
     //Handle click with google sign in
     const handleGoogleSignIn = () => {
@@ -44,6 +44,7 @@ export function useLoginController() {
         onSubmit,
         errors,
         disabledButton,
-        handleGoogleSignIn
+        handleGoogleSignIn,
+        errorMessage
     }
 }

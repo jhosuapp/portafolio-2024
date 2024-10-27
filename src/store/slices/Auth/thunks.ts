@@ -1,14 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { checkingCredentials, logout, login } from './authSlice';
-import { registerWithEmailPassword, signInWithGoogle } from '@/firebase/providers';
-import { RegisterType } from '@/models';
-
-const checkingAuth = (email:string, password:string) => {
-    console.log(email, password);
-    return async ( dispatch:Dispatch<any> ) => {
-        dispatch(checkingCredentials());
-    }
-}
+import { loginWithEmailPassword, registerWithEmailPassword, signInWithGoogle } from '@/firebase/providers';
+import { RegisterType, LoginType } from '@/models';
 
 //Register with google 
 const startGoogleSignIn = () => {
@@ -36,4 +29,17 @@ const startCreatingUserWithEmailPassword = ({ email, password, displayName }:Reg
     }
 }
 
-export { checkingAuth, startGoogleSignIn, startCreatingUserWithEmailPassword }
+//Login with email and password
+const startLoginWithEmailPassword = ({ email, password }:LoginType) =>{
+    return async (dispatch:Dispatch<any>) => {
+        dispatch(checkingCredentials());
+
+        const result = await loginWithEmailPassword({email, password});
+        //Validate error in response
+        if(!result.ok) return dispatch(logout( result ));
+        //Logged user if all it's ok
+        dispatch( login( result ) );
+    }
+}
+
+export { startGoogleSignIn, startCreatingUserWithEmailPassword, startLoginWithEmailPassword }

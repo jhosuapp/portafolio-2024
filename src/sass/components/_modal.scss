@@ -51,5 +51,14 @@
             margin: 3rem 0;
         }
     }
+}
 
+@media(max-width: fun.breakpoints('ipad-big')){
+    .modal{
+        &__content{
+            p{
+                font-size: 2rem;
+            }
+        }
+    }
 }

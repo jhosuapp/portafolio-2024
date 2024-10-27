@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { FirebaseAuth } from "./config";
-import { RegisterType } from "@/models";
+import { LoginType, RegisterType } from "@/models";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -57,4 +57,30 @@ export const registerWithEmailPassword = async ({ email, password, displayName }
             };
         }
     }
+}
+
+//Login with email and password 
+export const loginWithEmailPassword = async ({ email, password }:LoginType) => {
+
+    try {
+        const resp = await signInWithEmailAndPassword(FirebaseAuth, email, password);
+        const { uid, photoURL, displayName } = resp.user;
+        return {
+            ok: true,
+            displayName, email, photoURL, uid
+        }
+    } catch (error:unknown) {
+        if (error instanceof Error) {
+            return {
+                ok: false,
+                error: error.message
+            };
+        } else {
+            return {
+                ok: false,
+                error: 'Unknown error occurred'
+            };
+        }
+    }
+
 }
