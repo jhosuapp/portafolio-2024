@@ -10,7 +10,7 @@ interface AuthState {
 }
 
 const initialState:AuthState = {
-    status: 'not-auth',
+    status: 'checking',
     uid: null,
     email: null,
     displayName: null,
