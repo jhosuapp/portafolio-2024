@@ -5,10 +5,6 @@ import { useEffect, useState } from 'react';
 //Redux
 import { setIsLoad } from '@/store/slices/Loader';
 import { Dispatch } from "@reduxjs/toolkit";
-import { login, logout } from '@/store/slices/Auth';
-//Firebase
-import { onAuthStateChanged } from 'firebase/auth';
-import { FirebaseAuth } from '@/firebase/config';
 //Components and store
 import { Header, Footer } from '@/layouts';
 import { Transition, ProgressBar, Loader, ScrollSmoth, Cursor, Settings } from '@/components';
@@ -19,14 +15,6 @@ const PublicLayout = ():JSX.Element =>{
     const dispatch: Dispatch<any> = useAppDispatch()
     const [ counter, setCounter ] = useState<number>(100);
     const isDesk = useMediaQuery({ breakpoint: 991 });
-    //Validate if user is logged
-    useEffect(()=> {
-        onAuthStateChanged( FirebaseAuth, async (user) => {
-            if(!user) return dispatch(logout(''));
-            const { uid, email, displayName, photoURL } = user;
-            dispatch(login({ uid, email, displayName, photoURL }));
-        });
-    }, []);
     //Validate if page is load
     useEffect(() => {
         const handleLoadPage = () => {
