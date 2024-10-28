@@ -9,12 +9,12 @@ import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setHamburger } from "@/store/slices/Header";
 
-const HeaderNavItem = ({ text, link }: IHeaderNavItem ):JSX.Element => {
+const HeaderNavItem = ({ text, link, callBack }: IHeaderNavItem ):JSX.Element => {
 
     const { hamburger } = useAppSelector( state => state.header );
     const dispatch: Dispatch<any> = useAppDispatch()
     //Validate if current route is equal to url
-    const match = useMatch(link);
+    const match = useMatch(link ? link : 'N/A');
     const isActive = match !== null;
 
     return (
@@ -22,14 +22,23 @@ const HeaderNavItem = ({ text, link }: IHeaderNavItem ):JSX.Element => {
             variants={ variantsHeaderChildren }
             className={isActive ? 'active-route' : ''}
             whileTap={{ scale: 0.95 }}
-            onClick={ () => dispatch(setHamburger(!hamburger)) }
+            onClick={ () => { dispatch(setHamburger(!hamburger)), callBack && callBack(); } }
         >
-            <NavLink className='h-text fullwidth' to={ link }>
-                <div>
-                    <span>{ text }</span>
-                    <span>{ text }</span>
-                </div>
-            </NavLink>
+            {link ? (
+                <NavLink className='h-text fullwidth' to={ link }>
+                    <div>
+                        <span>{ text }</span>
+                        <span>{ text }</span>
+                    </div>
+                </NavLink>
+            ) : (
+                <a className="h-text fullwidth">
+                    <div>
+                        <span>{ text }</span>
+                        <span>{ text }</span>
+                    </div>
+                </a>
+            )}
         </motion.li>
     )
 }

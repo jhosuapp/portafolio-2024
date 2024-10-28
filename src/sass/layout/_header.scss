@@ -95,6 +95,7 @@
         font-size: clamp(1.8rem, 3vh, 3vh);
         position: relative;
         z-index: 2;
+        cursor: pointer;
     }
     li:hover{
         &::before{

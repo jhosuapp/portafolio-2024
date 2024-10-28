@@ -2,13 +2,21 @@ import { motion } from 'framer-motion';
 import { HeaderNavItem } from './HeaderNavItem';
 import { HeaderNavCta } from './HeaderNavCta';
 //Store
-import { useAppSelector } from '@/hooks';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { startLogout } from '@/store/slices/Auth';
+import { Dispatch } from '@reduxjs/toolkit';
 //Variant
 import { variantsHeaderParent, variantsHeaderChildren } from '@/variants';
 
 const HeaderNav = ():JSX.Element => {
 
+    const dispatch:Dispatch<any> = useAppDispatch();
     const { hamburger } = useAppSelector( state => state.header );
+    const { status } = useAppSelector( state => state.auth );
+
+    const handleLogout = () => {
+        dispatch( startLogout() );
+    }
 
     return (
         <motion.nav 
@@ -19,7 +27,8 @@ const HeaderNav = ():JSX.Element => {
             <motion.ul variants={ variantsHeaderParent }>
                 <HeaderNavItem text='HOME' link='/' />
                 <HeaderNavItem text='CONTACT' link='/contact' />
-                <HeaderNavItem text='LOGIN' link='/login' />
+                {status === 'not-auth' && <HeaderNavItem text='LOGIN' link='/login' />}
+                {status === 'auth' && <HeaderNavItem text='LOGOUT' callBack={ handleLogout } />}
             </motion.ul>
             <motion.div className='header__group' variants={ variantsHeaderParent }>
                 <HeaderNavCta 

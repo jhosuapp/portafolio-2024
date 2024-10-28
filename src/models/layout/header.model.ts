@@ -1,6 +1,7 @@
 export type IHeaderNavItem = {
     text: string;
-    link: string;
+    link?: string;
+    callBack?: () => void;
 }
 
 export type IheaderNavCta = {
