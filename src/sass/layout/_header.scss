@@ -63,6 +63,33 @@
         list-style: none;
         padding: 2rem 0.5rem;
         border-radius: 1.5rem;
+        img{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+        }
+        &.user_data{
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            pointer-events: none;
+            align-items: center;
+            justify-content: center;
+            li{
+                pointer-events: none;
+            }
+            a{
+                padding: 0;
+            }
+            span{
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
     }
     li{
         margin-bottom: 0.5rem;

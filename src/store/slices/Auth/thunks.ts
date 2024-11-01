@@ -12,6 +12,7 @@ const startGoogleSignIn = () => {
         //Validate error in response
         if(!result.ok) return dispatch(logout( result ));
         //Logged user if all it's ok
+        console.log(result);
         dispatch( login( result ) );
     }
 }

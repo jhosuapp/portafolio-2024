@@ -12,7 +12,7 @@ const HeaderNav = ():JSX.Element => {
 
     const dispatch:Dispatch<any> = useAppDispatch();
     const { hamburger } = useAppSelector( state => state.header );
-    const { status } = useAppSelector( state => state.auth );
+    const { status, displayName, photoURL } = useAppSelector( state => state.auth );
 
     const handleLogout = () => {
         dispatch( startLogout() );
@@ -24,6 +24,12 @@ const HeaderNav = ():JSX.Element => {
             animate={hamburger ? "open" : "closed"}
             variants={ variantsHeaderChildren }
         >
+            {displayName && 
+                <motion.ul className='user_data' variants={ variantsHeaderParent }>
+                    <img src={ photoURL ? photoURL : '/assets/img/circle-user-solid.svg' } alt={ displayName } />
+                    <HeaderNavItem text={ displayName } link='/contact' />
+                </motion.ul>
+            }
             <motion.ul variants={ variantsHeaderParent }>
                 <HeaderNavItem text='HOME' link='/' />
                 <HeaderNavItem text='CONTACT' link='/contact' />

@@ -5,7 +5,7 @@ interface AuthState {
     uid: number | null,
     email: string | null,
     displayName: string | null,
-    photoUrl: string | null,
+    photoURL: string | null,
     errorMessage: string | null
 }
 
@@ -14,7 +14,7 @@ const initialState:AuthState = {
     uid: null,
     email: null,
     displayName: null,
-    photoUrl: null,
+    photoURL: null,
     errorMessage: null
 }
 
@@ -27,7 +27,7 @@ export const authSlice = createSlice({
             state.uid = payload.uid;
             state.email = payload.email;
             state.displayName = payload.displayName;
-            state.photoUrl = payload.photoUrl;
+            state.photoURL = payload.photoURL;
             state.errorMessage = null;
         },
         logout: (state, { payload }) =>{
@@ -35,7 +35,7 @@ export const authSlice = createSlice({
             state.uid = null;
             state.email = null;
             state.displayName = null;
-            state.photoUrl = null;
+            state.photoURL = null;
             state.errorMessage = payload.error;
         },
         checkingCredentials: (state) =>{
