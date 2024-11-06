@@ -48,6 +48,7 @@ const Cursor = ():JSX.Element => {
                 left: springX, 
                 top: springY,
             }} 
+            data-testid='cursor-element'
         >
             <img src="/assets/img/icon-cursor.svg"  width="20px" height="20px" alt="icon cursor" />
         </motion.div>
