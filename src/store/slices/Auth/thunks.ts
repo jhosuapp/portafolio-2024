@@ -5,12 +5,15 @@ import { RegisterType, LoginType } from '@/models';
 
 //Register with google 
 const startGoogleSignIn = () => {
-    return async ( dispatch:Dispatch<any> ) => {
+    return async ( dispatch: Dispatch<any> ) => {
         dispatch(checkingCredentials());
 
         const result = await signInWithGoogle();
         //Validate error in response
-        if(!result.ok) return dispatch(logout( result ));
+        if(!result.ok){
+            dispatch(logout( result ));
+            return;
+        } 
         //Logged user if all it's ok
         console.log(result);
         dispatch( login( result ) );
@@ -24,7 +27,10 @@ const startCreatingUserWithEmailPassword = ({ email, password, displayName }:Reg
 
         const result = await registerWithEmailPassword({ email, password, displayName });
         //Validate error in response
-        if(!result.ok) return dispatch(logout( result ));
+        if(!result.ok){
+            dispatch(logout( result ));
+            return;
+        } 
         //Logged user if all it's ok
         dispatch( login( result ) );
     }
@@ -37,7 +43,10 @@ const startLoginWithEmailPassword = ({ email, password }:LoginType) => {
 
         const result = await loginWithEmailPassword({email, password});
         //Validate error in response
-        if(!result.ok) return dispatch(logout( result ));
+        if(!result.ok) {
+            dispatch(logout( result ));
+            return;
+        }
         //Logged user if all it's ok
         dispatch( login( result ) );
     }
