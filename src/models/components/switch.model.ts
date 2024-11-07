@@ -1,4 +1,4 @@
 export type ISwitch = {
     text: string,
-    id: string
+    id: 'dark_mode'
 }

@@ -22,7 +22,7 @@
             flex-direction: column;
             margin: auto;
             color: fun.color('primary');
-            body.dark-mode & {
+            body.dark_mode & {
                 color: fun.color('white');
             }
         }
@@ -81,7 +81,7 @@
             gap: 0.5rem;
             text-transform: uppercase;
             color: fun.color('primary');
-            body.dark-mode & {
+            body.dark_mode & {
                 color: fun.color('white');
             }
             span{
@@ -100,7 +100,7 @@
                 position: absolute;
                 content: "";
                 background-color: fun.color('primary');
-                body.dark-mode & {
+                body.dark_mode & {
                     background-color: fun.color('white');
                 }
             }

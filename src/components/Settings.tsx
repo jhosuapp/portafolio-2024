@@ -26,11 +26,7 @@ const Settings = ():JSX.Element => {
                 <div className="content">
                     <Switch 
                         text='Dark mode'
-                        id='dark-mode'
-                    />
-                    <Switch 
-                        text='Other test'
-                        id='other-test'
+                        id='dark_mode'
                     />
                 </div>
             </motion.article>

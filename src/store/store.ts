@@ -5,27 +5,37 @@ import { delaySlice } from './slices/Delay';
 import { headerSlice } from './slices/Header';
 import { loaderSlice } from './slices/Loader';
 import { authSlice } from './slices/Auth';
+import { switchSlice } from './slices/Switch';
+import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
-// Configuración de persistencia
+// persit config
 const persistConfig = {
   key: 'root',
   storage,
   blacklist: ['delay', 'header', 'auth', 'loader'],
 };
 
-// Combina los reducers
+// Combine reducers
 const rootReducer = combineReducers({
   delay: delaySlice.reducer,
   header: headerSlice.reducer,
   loader: loaderSlice.reducer,
   auth: authSlice.reducer,
+  switch: switchSlice.reducer,
 });
 
-// Aplica persistencia al reducer
+// apply persist to reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+            serializableCheck: {
+                // IGNORE THIS ACTIONS
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+      }),
 });
 
 export const persistor = persistStore(store);

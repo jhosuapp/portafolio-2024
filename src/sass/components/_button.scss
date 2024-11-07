@@ -84,7 +84,7 @@
     &--primary{
         background-color: fun.color('primary');
         color: fun.color('white');
-        body.dark-mode & {
+        body.dark_mode & {
             background-color: fun.color('tertiary');
         }
         b{
@@ -96,7 +96,7 @@
         color: fun.color('primary');
         b{
             background-color: fun.color('primary');
-            body.dark-mode & {
+            body.dark_mode & {
                 background-color: fun.color('tertiary');
             }
         }
