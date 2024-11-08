@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface AuthState {
+export interface AuthState {
     status: 'checking' | 'not-auth' | 'auth',
     uid: number | null,
     email: string | null,
@@ -36,7 +36,7 @@ export const authSlice = createSlice({
             state.email = null;
             state.displayName = null;
             state.photoURL = null;
-            state.errorMessage = payload.error;
+            state.errorMessage = payload?.error || null;
         },
         checkingCredentials: (state) =>{
             state.status = 'checking'

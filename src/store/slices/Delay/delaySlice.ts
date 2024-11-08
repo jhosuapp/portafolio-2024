@@ -9,7 +9,7 @@ const initialState: DelayState = {
 };
 
 export const delaySlice = createSlice({
-    name: 'counter',
+    name: 'delay',
     initialState: initialState,
     reducers: {  },
 });

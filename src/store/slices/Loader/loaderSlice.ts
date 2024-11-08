@@ -11,7 +11,7 @@ const initialState: LoaderState = {
 };
 
 export const loaderSlice = createSlice({
-    name: 'counter',
+    name: 'loader',
     initialState: initialState,
     reducers: { 
         setIsLoad: (state)=>{

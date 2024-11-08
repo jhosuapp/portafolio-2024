@@ -9,7 +9,7 @@ const initialState: HeaderState = {
 };
 
 export const headerSlice = createSlice({
-    name: 'counter',
+    name: 'header',
     initialState: initialState,
     reducers: { 
         setHamburger: (state, action)=>{
