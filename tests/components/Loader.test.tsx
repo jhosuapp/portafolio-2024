@@ -1,16 +1,26 @@
-// import { render, screen, fireEvent } from '@testing-library/react'
-// import { Loader } from '../../src/components/Loader'; 
+import { render, screen, fireEvent } from '@testing-library/react'
+import { Loader } from '../../src/components/Loader'; 
 
-// describe('<Loader>', ()=>{
+//Inital values
+const mockDispatch = jest.fn();
+
+//Mock react-redux
+jest.mock('react-redux', () => ({
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+    useDispatch: () => mockDispatch,
+}));
+
+describe('<Loader>', ()=>{
         
-//     const defaultProps = {
-//         counter: 100,
-//     }
+    const defaultProps = {
+        counter: 100,
+    }
 
-//     it('should render component', ()=>{
-//         const { container } = render(<Loader {...defaultProps} />);
+    it('should render component', ()=>{
+        const { container } = render(<Loader {...defaultProps} />);
 
-//         expect(container).toBeInTheDocument();
-//     });
+        expect(container).toBeInTheDocument();
+    });
     
-// });
+});

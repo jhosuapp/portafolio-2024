@@ -33,6 +33,7 @@ const Settings = ():JSX.Element => {
             {/* Settings */}
             <motion.article
                 onClick={ handleClick }
+                data-testid='handle-event'
             >
                 <img src='/assets/img/settings.svg' alt='settings' />
             </motion.article>
