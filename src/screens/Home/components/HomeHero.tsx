@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@/hooks/index";
-import { Container } from "@/components";
+import { Container, Text } from "@/components";
 
 const HomeHero = ():JSX.Element => {
 
@@ -8,25 +8,11 @@ const HomeHero = ():JSX.Element => {
     return (
         <Container className="ctn ctn--top ctn--height home-hero">
             <article>
-                <h1>
-                    <div>
-                        <span>We</span>
-                        <span>help</span>
-                        <span>brands</span>
-                        <span>create</span>
-                        <span>digital</span>
-                    </div>
-                    <div>
-                        <span>experiences</span>
-                        <span>that</span>
-                        <span>conect</span>
-                        <span>with</span>
-                    </div>
-                    <div>
-                        <span>their</span>
-                        <span>audience</span>
-                    </div>
-                </h1>
+                <Text 
+                    headingType="h1" 
+                    className="center" 
+                    textContent={ ["We", "brands", "create", "digital", "experiences", "conect", "with", "their", "audience"] } 
+                />
             </article>
             <article>
                 <picture>

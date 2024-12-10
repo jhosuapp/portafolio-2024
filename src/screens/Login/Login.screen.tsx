@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Controller } from "react-hook-form";
-import { Delayed, Container, Button, Input, Icon, Text, Modal } from "@/components";
+import { Delayed, Container, Button, Input, Icon, Text, Modal, AnimateLine } from "@/components";
 import { useLoginController } from "./Login.controller";
 
 
@@ -19,12 +19,11 @@ const LoginScreen = ():JSX.Element => {
 
     return (
         <Delayed>
+            <AnimateLine />
             <Container className="login ctn ctn--top ctn--height">
                 <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
-                        <Text headingType="h1" className="center">
-                            Login in J'D
-                        </Text>
+                        <Text headingType="h1" className="center" textContent={ ["Login", "in", "J'D"] } />
                        
                         <Button
                             Text="Continue with google"
@@ -36,14 +35,14 @@ const LoginScreen = ():JSX.Element => {
                         >
                             <Icon src={ `/assets/img/google-brands-solid.svg` } width={ 22.5 } height={ 22.5 } alt={`Icon facebook`} />
                         </Button>
-                        <Button
+                        {/* <Button
                             Text="Continue with facebook"
                             HoverText={`Login with facebook`}
                             className="btn btn--primary h-text"
                             isLoading={ disabledButton }
                         >
                             <Icon src={ `/assets/img/facebook-brands-solid.svg` } width={ 22.5 } height={ 25 } alt={`Icon facebook`} />
-                        </Button>
+                        </Button> */}
                     </fieldset>
 
                     <fieldset>
@@ -85,7 +84,7 @@ const LoginScreen = ():JSX.Element => {
                             isLoading={ disabledButton }
                         />
                     </fieldset>
-                    <Text className="center">
+                    <Text className="center" delayAnimation={ 0.5 }>
                         ¿You don't have an acount? <Link className="link" to={'/register'}>register now</Link>
                     </Text>
                 </form>

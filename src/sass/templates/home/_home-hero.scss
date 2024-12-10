@@ -9,19 +9,23 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        .general-text{
+            top: -8vh;
+            left: -3vw;
+        }
         h1{
             font-size: 5vh;
             gap: 0 0.5rem;
             width: 100%;
             line-height: 1;
             position: relative;
-            top: -8vh;
-            left: -3vw;
             width: fit-content;
             display: flex;
-            flex-direction: column;
             margin: auto;
+            flex-wrap: wrap;
             color: fun.color('primary');
+            max-width: 25vw;
+            justify-content: flex-start;
             body.dark_mode & {
                 color: fun.color('white');
             }
@@ -124,10 +128,13 @@
         article:first-child{
             justify-content: flex-start;
             margin-bottom: 3rem;
-            h1{
-                font-size: 2rem;
+            .general-text{
                 top: unset;
                 left: unset;
+            }
+            h1{
+                max-width: 25rem;
+                font-size: 2rem;
                 margin: 0;
             }
         }

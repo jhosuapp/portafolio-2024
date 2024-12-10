@@ -1,17 +1,40 @@
+import { motion } from "framer-motion";
 import { ITextProps } from '@/models';
+import { useState } from 'react';
 
-const Text = ({ children, headingType, className, ...atributtes }: ITextProps):JSX.Element =>{
-    return( 
-        <>
-            {!headingType && <p className={`paragraph ${className} `} {...atributtes}>{ children }</p>}
-            {headingType == 'h1' && <h1 className={`title ${className} `} {...atributtes}>{ children }</h1>}
-            {headingType == 'h2' && <h2 className={`title-s ${className} `} {...atributtes}>{ children }</h2>}
-            {headingType == 'h3' && <h3 className={`subtitle ${className} `} {...atributtes}>{ children }</h3>}
-            {headingType == 'h4' && <h4 className={`subtitle-s ${className} `} {...atributtes}>{ children }</h4>}
-            {headingType == 'h5' && <h5 className={`${className} `} {...atributtes}>{ children }</h5>}
-            {headingType == 'h6' && <h6 className={`${className} `} {...atributtes}>{ children }</h6>}
-        </>
+const Text = ({ textContent, children, headingType, className, delayAnimation, ...attributes }: ITextProps): JSX.Element => {
+    const [isInView, setIsInView] = useState(false);
+    const Tag = headingType || 'p';
+
+    return (
+        <motion.div
+            className={`general-text ${isInView ? "animate-text" : ""}`}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }} 
+            transition={{ duration: 0.5, ease: "easeOut", delay: delayAnimation || 0 }} 
+            onViewportEnter={() => setIsInView(true)} 
+            onViewportLeave={() => setIsInView(false)}
+            viewport={{ once: true, amount: 0.5 }} 
+        >
+            <Tag 
+                className={`${Tag === 'p' ? 'paragraph' : 'title'} ${className}`} 
+                {...attributes}
+            >
+                {children}
+                {textContent && textContent.map((data, index) => {
+                    const delay = index >= 10 ? `${Math.floor(index / 10)}.${index % 10}s` : `0.${index}s`;
+                    return (
+                        <span 
+                            style={{ transitionDelay: delay }} 
+                            key={index + data}
+                        >
+                            {data}
+                        </span>
+                    );
+                })}
+            </Tag>
+        </motion.div>
     );
-}
+};
 
 export { Text }

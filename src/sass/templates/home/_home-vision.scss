@@ -1,0 +1,53 @@
+@use '../../base/functions' as fun;
+
+.home-vision{
+    article:first-child{
+        h2, h3{
+            font-size: 10vw;
+            display: flex;
+            gap: 2vw;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            span{
+                transform: translateY(10vw);
+                transition: .5s ease transform;
+            }
+            span:first-child{
+                transition-delay: .2s;
+            }
+            span:last-child{
+                transition-delay: .3s;
+            }
+        }
+        h2{
+            left: -10vw;
+            text-align: right;
+            justify-content: flex-end;
+            transition: .5s ease left;
+            transition-delay: .9s;
+        }
+        &.animate-title{
+            h2{
+                left: 0;
+            }
+            span{
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .home-vision{
+        article:first-child{
+            h2, h3{
+                font-size: 8vw;
+            }
+            h2{
+                justify-content: flex-start;
+                padding-left: 25vw;
+            }
+        }
+    }
+}

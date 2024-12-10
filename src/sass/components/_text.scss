@@ -1,11 +1,36 @@
 @use '../base/functions' as fun;
 
+//ANIMATIONS
+
+.general-text{
+    position: relative;
+    overflow: hidden;
+    span{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: .5s ease;
+        transition-property: opacity, transform;
+        transition-delay: var(--index);
+    }
+}
+
+.general-text.animate-text {
+    span{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .title {
     font-size: clamp(2rem, 6vh, 5rem);
+    display: flex;
+    gap: 1rem;
 }
 
 .paragraph {
     font-size: clamp(1.6rem, 2vh, 2rem);
+    display: flex;
+    gap: 0.5rem;
 }
 
 .error{
@@ -38,6 +63,7 @@
 
 .center{
     text-align: center;
+    justify-content: center;
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
