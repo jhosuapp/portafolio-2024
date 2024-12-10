@@ -19,7 +19,8 @@ input[type="email"]{
     overflow: hidden;
     background-color: fun.color('bg');
     border: 2px solid fun.color('bg');
-    transition: .5s ease all;
+    opacity: 0;
+    transition: easeOut 0.5s all;
     &:hover{
         border-color: fun.color('secondary');
     }

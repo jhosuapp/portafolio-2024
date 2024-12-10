@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { motion } from "framer-motion";
 import { ITextProps } from '@/models';
-import { useState } from 'react';
 
 const Text = ({ textContent, children, headingType, className, delayAnimation, ...attributes }: ITextProps): JSX.Element => {
     const [isInView, setIsInView] = useState(false);

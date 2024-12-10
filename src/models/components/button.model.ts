@@ -1,4 +1,5 @@
-import type { ButtonHTMLAttributes } from 'react'
+import type { ButtonHTMLAttributes } from 'react';
+import type { MotionProps } from "framer-motion";
 
 export type ICustomPropsButton = {
     className?: string;
@@ -6,8 +7,9 @@ export type ICustomPropsButton = {
     HoverText: string;
     isDisabled?: boolean;
     isLoading?: boolean;
+    delayAnimation?: number;
 }
 
 export type INativePropsButton = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type IButtonProps = ICustomPropsButton & INativePropsButton;
+export type IButtonProps = ICustomPropsButton & ButtonHTMLAttributes<HTMLButtonElement> & MotionProps;

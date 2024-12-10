@@ -19,7 +19,7 @@ const LoginScreen = ():JSX.Element => {
 
     return (
         <Delayed>
-            <AnimateLine />
+            <AnimateLine top="-30vh" />
             <Container className="login ctn ctn--top ctn--height">
                 <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
@@ -32,6 +32,7 @@ const LoginScreen = ():JSX.Element => {
                             onClick={ () => handleGoogleSignIn() }
                             type="button"
                             isLoading={ disabledButton }
+                            delayAnimation={ 0.3 }
                         >
                             <Icon src={ `/assets/img/google-brands-solid.svg` } width={ 22.5 } height={ 22.5 } alt={`Icon facebook`} />
                         </Button>
@@ -58,6 +59,7 @@ const LoginScreen = ():JSX.Element => {
                                     onBlur={ onBlur }
                                     value={ value }
                                     errorMessage={ errors.email?.message }
+                                    delayAnimation={ 0.35 }
                                 />
                             )}
                         />
@@ -73,6 +75,7 @@ const LoginScreen = ():JSX.Element => {
                                     onBlur={ onBlur }
                                     value={ value }
                                     errorMessage={ errors.password?.message }
+                                    delayAnimation={ 0.4 }
                                 />
                             )}
                         />
@@ -82,6 +85,7 @@ const LoginScreen = ():JSX.Element => {
                             HoverText={`Login now`}
                             className="btn btn--primary h-text"
                             isLoading={ disabledButton }
+                            delayAnimation={ 0.45 }
                         />
                     </fieldset>
                     <Text className="center" delayAnimation={ 0.5 }>

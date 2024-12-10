@@ -22,9 +22,7 @@ const RegisterScreen = ():JSX.Element => {
             <Container className="login ctn ctn--top ctn--height">
                 <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
-                        <Text headingType="h1" className="center">
-                            Register in J'D
-                        </Text>
+                        <Text headingType="h1" className="center" textContent={ ["Register", "in", "J'D"] } />
                     </fieldset>
 
                     <fieldset>
@@ -40,6 +38,7 @@ const RegisterScreen = ():JSX.Element => {
                                     onBlur={ onBlur }
                                     value={ value }
                                     errorMessage={ errors.displayName?.message }
+                                    delayAnimation={ 0.3 }
                                 />
                             )}
                         />
@@ -55,6 +54,7 @@ const RegisterScreen = ():JSX.Element => {
                                     onBlur={ onBlur }
                                     value={ value }
                                     errorMessage={ errors.email?.message }
+                                    delayAnimation={ 0.35 }
                                 />
                             )}
                         />
@@ -70,6 +70,7 @@ const RegisterScreen = ():JSX.Element => {
                                     onBlur={ onBlur }
                                     value={ value }
                                     errorMessage={ errors.password?.message }
+                                    delayAnimation={ 0.4 }
                                 />
                             )}
                         />
@@ -81,9 +82,10 @@ const RegisterScreen = ():JSX.Element => {
                             className="btn btn--primary h-text"
                             isLoading={ disabledButton }
                             isDisabled={ !isValid }
+                            delayAnimation={ 0.45 }
                         />
                     </fieldset>
-                    <Text className="center">
+                    <Text className="center" delayAnimation={ 0.5 }>
                         ¿You have an acount? <Link className="link" to={'/login'}>login now</Link>
                     </Text>
                 </form>

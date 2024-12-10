@@ -4,7 +4,7 @@ import { HomeHero, HomeVision } from './components';
 const HomeScreen = () => {
     return (
         <Delayed>
-            <AnimateLine />
+            <AnimateLine top="40vh" />
             <HomeHero />
             <HomeVision />
         </Delayed>

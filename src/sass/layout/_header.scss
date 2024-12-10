@@ -32,6 +32,9 @@
     font-weight: 500;
     text-transform: uppercase;
     color: fun.color('primary');
+    &.disabled{
+        pointer-events: none;
+    }
     body.dark_mode & {
         color: fun.color('white');
     }
