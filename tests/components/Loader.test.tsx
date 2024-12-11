@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { Loader } from '../../src/components/Loader'; 
 
 //Inital values

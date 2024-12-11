@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Delayed } from '../../src/components/Delayed';
 import { useAppSelector } from '../../src/hooks/Redux/useRedux';
 
