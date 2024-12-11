@@ -23,7 +23,7 @@ const LoginScreen = ():JSX.Element => {
             <Container className="login ctn ctn--top ctn--height">
                 <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
-                        <Text headingType="h1" className="center" textContent={ ["Login", "in", "J'D"] } />
+                        <Text headingType="h1" className="center title" textContent={ ["Login", "in", "J'D"] } />
                        
                         <Button
                             Text="Continue with google"
@@ -88,7 +88,7 @@ const LoginScreen = ():JSX.Element => {
                             delayAnimation={ 0.45 }
                         />
                     </fieldset>
-                    <Text className="center" delayAnimation={ 0.5 }>
+                    <Text className="center paragraph" delayAnimation={ 0.5 }>
                         ¿You don't have an acount? <Link className="link" to={'/register'}>register now</Link>
                     </Text>
                 </form>

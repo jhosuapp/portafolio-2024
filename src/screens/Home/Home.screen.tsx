@@ -7,6 +7,7 @@ const HomeScreen = () => {
             <AnimateLine top="40vh" />
             <HomeHero />
             <HomeVision />
+            <AnimateLine top="150vh" className="animate-line--secondary" />
         </Delayed>
     )
 }

@@ -22,7 +22,7 @@ const RegisterScreen = ():JSX.Element => {
             <Container className="login ctn ctn--top ctn--height">
                 <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                     <fieldset>
-                        <Text headingType="h1" className="center" textContent={ ["Register", "in", "J'D"] } />
+                        <Text headingType="h1" className="center title" textContent={ ["Register", "in", "J'D"] } />
                     </fieldset>
 
                     <fieldset>
@@ -85,7 +85,7 @@ const RegisterScreen = ():JSX.Element => {
                             delayAnimation={ 0.45 }
                         />
                     </fieldset>
-                    <Text className="center" delayAnimation={ 0.5 }>
+                    <Text className="center paragraph" delayAnimation={ 0.5 }>
                         ¿You have an acount? <Link className="link" to={'/login'}>login now</Link>
                     </Text>
                 </form>

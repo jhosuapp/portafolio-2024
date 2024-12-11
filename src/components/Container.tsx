@@ -1,17 +1,20 @@
-//Types
-import { ReactNode } from 'react';
-import { HTMLAttributes } from 'react';
-//Custom types
-type PropsNative = HTMLAttributes<HTMLElement>;
-type PropsReact = { children: ReactNode }
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { IContainerProps } from "@/models/components/container.model";
 
-type Props = PropsNative & PropsReact;
+const Container = ( { children, className, ...PropSection }: IContainerProps ):JSX.Element=>{
+    const [isInView, setIsInView] = useState(false);
 
-const Container = ( { children, ...PropSection }: Props ):JSX.Element=>{
     return(
-        <section { ...PropSection } >
+        <motion.section 
+            className={ `${className}  ${isInView ? "animate-container" : ""}` }
+            onViewportEnter={() => setIsInView(true)} 
+            onViewportLeave={() => setIsInView(false)}
+            viewport={{ once: true, amount: 0.5 }} 
+            { ...PropSection } 
+        >
             { children }
-        </section>
+        </motion.section>
     );
 }
 

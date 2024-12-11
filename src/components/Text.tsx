@@ -17,7 +17,7 @@ const Text = ({ textContent, children, headingType, className, delayAnimation, .
             viewport={{ once: true, amount: 0.5 }} 
         >
             <Tag 
-                className={`${Tag === 'p' ? 'paragraph' : 'title'} ${className}`} 
+                className={className} 
                 {...attributes}
             >
                 {children}

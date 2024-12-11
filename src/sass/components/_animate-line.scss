@@ -2,4 +2,14 @@
     position: absolute;
     left: -5%;
     z-index: -1;
+    &--secondary {
+        transform: rotateY(180deg);
+        left: unset;
+        right: -5%;
+    }
+    body.dark_mode & {
+        path{
+            stroke: rgb(82, 82, 82);
+        }
+    }
 }

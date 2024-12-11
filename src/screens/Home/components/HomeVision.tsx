@@ -47,8 +47,9 @@ const HomeVision = ():JSX.Element => {
                             className="home-vision-carrousel__item"
                         >
                             <img
-                                src={src}
+                                src={ src }
                                 alt={`Image ${index}`}
+                                style={{ transitionDelay: `0.${index + 5}s` }}
                             />
                         </motion.article>
                     ))}
