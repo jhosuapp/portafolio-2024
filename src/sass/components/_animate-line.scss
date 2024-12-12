@@ -1,3 +1,5 @@
+@use '../base/functions' as fun;
+
 .animate-line{
     position: absolute;
     left: -5%;
@@ -10,6 +12,16 @@
     body.dark_mode & {
         path{
             stroke: rgb(82, 82, 82);
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .animate-line{
+        left: -8%;
+        top: -20vh !important;
+        &--secondary{
+            top: 0 !important;
         }
     }
 }
