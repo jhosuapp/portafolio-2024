@@ -2,19 +2,27 @@ import { useEffect, useState } from "react";
 import ReactDOM from 'react-dom';
 //Redux
 import { resetErrorMessage } from "@/store/slices/Auth";
-import { useAppDispatch } from "@/hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Dispatch } from "@reduxjs/toolkit";
 //Components
 import { Button } from "./Button";
+//Audio
+import soundPopupOn from '/assets/audio/pop-up-on.mp3';
+import soundPopupOff from '/assets/audio/pop-up-off.mp3';
+
 
 type Props = {
     errorMessage: string | null
 }
 
 const Modal = ({ errorMessage }:Props):JSX.Element => {
+    const { status } = useAppSelector(state => state.sound);
     const dispatch:Dispatch<any> = useAppDispatch();
-
     const [showModal, setShowModal] = useState<boolean>(false);
+    //Modal sound
+    useEffect(()=>{
+        status && new Audio(showModal ? soundPopupOn : soundPopupOff).play();
+    },[showModal]);
     //Render modal
     useEffect(()=>{
         errorMessage && setShowModal(true);

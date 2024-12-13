@@ -13,6 +13,7 @@ body{
         top: 0;
         left: 0;
         background-color: fun.color('bg');
+        z-index: -1;
     }
     &.dark_mode{
         &::before{

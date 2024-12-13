@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { variantsSettingsContent, variantsSettingsBg, variantsSettingsContentMobile } from '@/variants';
-import { useMediaQuery } from '@/hooks';
+import { useAppSelector, useMediaQuery } from '@/hooks';
 import { Switch, Sound } from './';
 //Audio
 import menuOpen from '/assets/audio/menu-open-softer.mp3';
@@ -9,12 +9,12 @@ import menuClose from '/assets/audio/menu-close.mp3';
 
 const Settings = ():JSX.Element => {
 
+    const { status } = useAppSelector(state => state.sound);
     const isDesk = useMediaQuery({breakpoint: 991 });
-
     const [ settings, setSettings ] = useState<boolean>(false);
 
     const handleClick = ()=>{
-        new Audio(settings ? menuClose : menuOpen).play();
+        status && new Audio(settings ? menuClose : menuOpen).play();
         setSettings(!settings);
     }
 

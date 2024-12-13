@@ -9,10 +9,11 @@ import menuClose from '/assets/audio/menu-close.mp3';
 const HeaderButtons = ():JSX.Element => {
 
     const { hamburger } = useAppSelector( state => state.header );
+    const { status } = useAppSelector(state => state.sound);
     const dispatch: Dispatch<any> = useAppDispatch();
 
     useEffect(()=>{
-        new Audio(hamburger ? menuOpen : menuClose).play();
+        status && new Audio(hamburger ? menuOpen : menuClose).play();
     },[hamburger]);
 
     return (

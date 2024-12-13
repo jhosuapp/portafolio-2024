@@ -1,22 +1,24 @@
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { updateStatus } from '@/store/slices/Sound';
 //Audio
 import soundOn from '/assets/audio/enable-sound.mp3';
 import soundOff from '/assets/audio/disable-sound.mp3';
 
 const Sound = ():JSX.Element => {
 
-    const [sound, setSound] = useState<boolean>(true);
+    const { status } = useAppSelector(state => state.sound);
+    const dispatch = useAppDispatch();
 
     const handleClickSound = () => {
-        new Audio(sound ? soundOff : soundOn).play();
-        setSound(!sound);
+        new Audio(status ? soundOff : soundOn).play();
+        dispatch(updateStatus());
     }
 
     return (
         <svg
             viewBox="0 0 24 24"
             fill="none"
-            className={`sound ${sound ? 'on-sound' : 'off-sound'}`}
+            className={`sound ${status ? 'on-sound' : 'off-sound'}`}
             onClick={ handleClickSound }
         >
             <g>

@@ -13,6 +13,7 @@ import switchOff from '/assets/audio/switch-off.mp3';
 const Switch = React.memo(({ text, id }:ISwitch):JSX.Element => {
     const dispatch:Dispatch<any> = useAppDispatch();
     const { modes } = useAppSelector(state => state.switch);
+    const { status } = useAppSelector(state => state.sound);
     //Validate if mode is enable
     useEffect(()=>{
         const body = document.body;
@@ -23,7 +24,7 @@ const Switch = React.memo(({ text, id }:ISwitch):JSX.Element => {
     //Update state
     const handleSwitch = () =>{
         dispatch(setMode(!modes[id]));
-        new Audio(modes[id] ? switchOn : switchOff).play();
+        status && new Audio(modes[id] ? switchOn : switchOff).play();
     }
 
     return (

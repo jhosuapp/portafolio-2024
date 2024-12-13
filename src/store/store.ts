@@ -6,6 +6,7 @@ import { headerSlice } from './slices/Header';
 import { loaderSlice } from './slices/Loader';
 import { authSlice } from './slices/Auth';
 import { switchSlice } from './slices/Switch';
+import { soundSlice } from './slices/Sound';
 import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
 // persit config
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   loader: loaderSlice.reducer,
   auth: authSlice.reducer,
   switch: switchSlice.reducer,
+  sound: soundSlice.reducer,
 });
 
 // apply persist to reducer
