@@ -1,0 +1,47 @@
+@use '../base/functions' as fun;
+@import '../animations/sound';
+
+.sound{
+    width: 2.25rem;
+    cursor: pointer;
+    g path{
+        stroke: fun.color('primary');
+
+    }
+    g:nth-child(1) path{
+        fill: fun.color('primary');
+        transform: unset;
+        transition: .5s ease all;
+        position: relative;
+    }
+    g:nth-child(2) path,
+    g:nth-child(3) path{
+        opacity: 1;
+        transition: .5s ease all;
+        transform: unset;
+    }
+    &.off-sound{
+        path:nth-child(1){
+            transform: translateX(1rem);
+        }
+        g:nth-child(2) path,
+        g:nth-child(3) path{
+            opacity: 0;
+            transform: translateX(-1rem);
+        }
+    }
+    &.on-sound {
+        animation: sound-animation .4s ease;
+        g:nth-child(2) path,
+        g:nth-child(3) path{
+            transform: translateX(0);
+        }
+        g:nth-child(2) path{
+            transition-delay: .2s;
+        }
+        g:nth-child(3) path{
+            transition-delay: .3s;
+        }
+    }
+}
+

@@ -7,6 +7,8 @@ import { setMode } from "@/store/slices/Switch";
 import { motion } from "framer-motion";
 import { ISwitch } from '../models/index';
 import { variantSwitch } from "@/variants";
+import switchOn from '/assets/audio/switch-on.mp3';
+import switchOff from '/assets/audio/switch-off.mp3';
 
 const Switch = React.memo(({ text, id }:ISwitch):JSX.Element => {
     const dispatch:Dispatch<any> = useAppDispatch();
@@ -21,6 +23,7 @@ const Switch = React.memo(({ text, id }:ISwitch):JSX.Element => {
     //Update state
     const handleSwitch = () =>{
         dispatch(setMode(!modes[id]));
+        new Audio(modes[id] ? switchOn : switchOff).play();
     }
 
     return (
