@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { HomeScreen, ContactScreen } from '../screens';
+import { HomeScreen, ContactScreen, SalomeScreen } from '../screens';
 
 const PrivateRouter = [
     {
@@ -17,6 +17,10 @@ const PrivateRouter = [
     {
         path: "/register",
         element: <Navigate to="/" />,
+    },
+    {
+        path: "/danita",
+        element: <SalomeScreen />,
     },
 ];
 

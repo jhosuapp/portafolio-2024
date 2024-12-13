@@ -1,0 +1,89 @@
+@use '../../base/functions' as fun;
+
+.salome-introduction {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    top: 0;
+    article{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease all;
+        &.animation-left{
+            left: 0;
+            top: 0;
+        }
+        &.animation-bottom{
+            bottom: 0;
+            left: 0;
+        }
+        &.animation-right{
+            right: 0;
+            top: 0;
+        }
+        &.animation-top{
+            top: 0;
+            left: 0;
+        }
+        p{
+            font-size: 10vh;
+            color: fun.color('white');
+            width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+    }
+    &-preview{
+        z-index: 99;
+        background-color: fun.color('purple');
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        top: 0;
+        transition: 1s ease top;
+        button{
+            pointer-events: all;
+        }
+        p{
+            margin: unset !important;
+        }
+    }
+    &.init-animation-salome{
+        article{
+            &.animation-left{
+                left: -120%;
+            }
+            &.animation-bottom{
+                bottom: -120%;
+            }
+            &.animation-right{
+                right: -120%;
+            }
+            &.animation-top{
+                top: -120%;
+            }
+            &.salome-introduction-preview{
+                top: -120%;
+            }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .salome-introduction {
+        article{
+            p{
+                font-size: 4rem;
+            }
+        }
+    }
+}
