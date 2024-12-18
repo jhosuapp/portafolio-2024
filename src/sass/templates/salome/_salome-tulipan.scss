@@ -1,0 +1,23 @@
+@use '../../base/functions' as fun;
+
+.salome-tulipan{
+    position: absolute;
+    bottom: -20px;
+    height: 20vh;
+    animation: flower 2s linear infinite alternate;
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .salome-tulipan{
+        height: 25vw;
+    }
+}
+
+@keyframes flower {
+    from{
+        transform: rotate(-5deg);
+    }
+    to{
+        transform: rotate(5deg);
+    }
+}

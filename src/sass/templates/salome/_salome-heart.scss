@@ -1,0 +1,38 @@
+@use '../../base/functions' as fun;
+
+.salome-heart{
+    position: absolute;
+    z-index: 200;
+    border-radius: 50%;
+    animation: love-burst 3s infinite 0s;
+    box-shadow: inset 0 0 0 5.5vmin transparent;
+    transform: translate(0, 0.05em) scale(0);
+    transform-origin: center bottom;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__image{
+        opacity: 1;
+        animation: love 3s forwards infinite 0s;
+        width: 70%;
+        height: 70%;
+        opacity: 0;
+    }
+}
+
+@keyframes love-burst {
+    50%,
+    100% {
+        box-shadow: inset 0 0 0 0 rgb(18, 226, 129);
+        -webkit-transform: translate(0, 0) scale(1);
+        transform: translate(0, 0) scale(1);
+    }
+}
+  
+@keyframes love {
+    50% {
+        fill: fun.color('purple');
+        opacity: 1;
+    }
+}

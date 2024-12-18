@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ReactDOM from 'react-dom';
 import { motion } from "framer-motion";
-import { dummyData } from '../Salome.controller';
+import { dummyDataIntrodution } from '../data/introduction';
 import { Button } from "@/components";
 //Audio
 import soundTuyo from '/assets/audio/tuyo-mora.mp3';
@@ -37,7 +37,7 @@ const SalomeIntroduction = ():JSX.Element => {
                     onClick={ hanldeClickSound }
                 />
             </article>
-            {dummyData.map((data, index)=>(
+            {dummyDataIntrodution.map((data, index)=>(
                 <article 
                     key={ index }
                     className={data.position}
