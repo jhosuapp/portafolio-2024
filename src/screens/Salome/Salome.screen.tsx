@@ -1,15 +1,13 @@
-import { Delayed, Container } from "@/components";
-import { SalomeIntroduction, SalomeFlowers } from './components';
-// import { SalomeFlowers } from './components';
+import { Delayed } from "@/components";
+import { SalomeIntroduction, SalomeFlowers, SalomeText } from './components';
 
 const SalomeScreen = ():JSX.Element => {
 
     return (
         <Delayed>
             <SalomeIntroduction />
-            <Container>
-                <SalomeFlowers />
-            </Container>
+            <SalomeText />
+            <SalomeFlowers />
         </Delayed>
     )
 }
