@@ -1,6 +1,6 @@
 export const dummyDataIntrodution = [
     {
-        message: '¡Hola, mi querida Danita! 🌸',
+        message: '¡Hola, mi niña! 🌸',
         delay: 2,
         position: 'animation-left',
         index: 10,

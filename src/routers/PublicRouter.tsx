@@ -18,7 +18,7 @@ const PublicRouter = [
         element: <RegisterScreen />,
     },
     {
-        path: "/danita",
+        path: "/jd",
         element: <SalomeScreen />,
     },
 ];

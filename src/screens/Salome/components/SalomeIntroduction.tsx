@@ -5,11 +5,13 @@ import { dummyDataIntrodution } from '../data/introduction';
 import { Button } from "@/components";
 //Audio
 import soundTuyo from '/assets/audio/tuyo-mora.mp3';
+//import { useAppSelector } from "@/hooks";
 
 
 const SalomeIntroduction = ():JSX.Element => {
     const [isInView, setIsInView] = useState(false);
     const [initAnimation, setInitAnimation] = useState(false);
+    //const { status } = useAppSelector(state => state.sound);
     //Handle click sound
     const hanldeClickSound = () => {
         setInitAnimation(true);
@@ -17,6 +19,9 @@ const SalomeIntroduction = ():JSX.Element => {
         audio.loop = true;
         audio.play();
     };
+    //useEffect(()=>{
+    //  status ? audio.plaY
+    //},[status]);
     //Validate if portal exists
     const portalRoot = document.getElementById('portal-salome');
     if (!portalRoot) return <></>;
@@ -29,7 +34,7 @@ const SalomeIntroduction = ():JSX.Element => {
             viewport={{ once: true, amount: 0.5 }} 
         >
             <article className="salome-introduction-preview">
-                <p>¿Estás preparada mi bro chiquita?</p>
+                <p>¿Estás preparada mi niña?</p>
                 <Button
                     Text="Dale click aquí para empezar"
                     HoverText={`Estoy lista`}

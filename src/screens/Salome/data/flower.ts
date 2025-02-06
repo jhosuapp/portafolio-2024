@@ -24,6 +24,24 @@ export const dummyFlowers = [
         left: '30%'
     },
     {
+        left: '35%'
+    },
+    {
+        left: '40%'
+    },
+    {
+        left: '45%'
+    },
+    {
+        left: '50%'
+    },
+    {
+        left: '55%'
+    },
+    {
+        left: '60%'
+    },
+    {
         left: '65%'
     },
     {

@@ -19,7 +19,7 @@ const PrivateRouter = [
         element: <Navigate to="/" />,
     },
     {
-        path: "/danita",
+        path: "/jd",
         element: <SalomeScreen />,
     },
 ];

@@ -33,7 +33,7 @@ const HeaderNav = ():JSX.Element => {
             <motion.ul variants={ variantsHeaderParent }>
                 <HeaderNavItem text='HOME' link='/' />
                 <HeaderNavItem text='CONTACT' link='/contact' />
-                <HeaderNavItem text='Danita' link='/danita' />
+                <HeaderNavItem text='J&D' link='/jd' />
                 {status === 'not-auth' && <HeaderNavItem text='LOGIN' link='/login' />}
                 {status === 'auth' && <HeaderNavItem text='LOGOUT' callBack={ handleLogout } />}
             </motion.ul>
