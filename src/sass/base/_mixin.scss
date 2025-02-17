@@ -1,3 +1,24 @@
+@use "sass:list";
+$navigators: moz webkit ms o;
+
+@mixin prefix($properties, $values, $prefixes: $navigators) {
+    $pairs: list.zip($properties, $values);
+  
+    @each $prefix in $prefixes {
+        @each $pair in $pairs {
+            $property: list.nth($pair, 1);
+            $value: list.nth($pair, 2);
+            -#{$prefix}-#{$property}: $value;
+        }
+    }
+  
+    @each $pair in $pairs {
+        $property: list.nth($pair, 1);
+        $value: list.nth($pair, 2);
+        #{$property}: $value;
+    }
+}  
+
 @mixin restart_button ($o: inherit, $b: none){
     outline: $o;
     border: $b;

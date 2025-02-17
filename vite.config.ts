@@ -10,4 +10,12 @@ export default defineConfig({
       '@': path.resolve('./src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // additionalData: '@import "@/styles/variables.scss";',
+      },
+    },
+    postcss: './postcss.config.js',
+  },
 })
