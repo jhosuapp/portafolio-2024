@@ -1,13 +1,13 @@
 @use '../base/functions' as fun;
-@import '../animations/settings';
+@use '../base/mixin' as mix;
+@use '../animations/settings';
 
 .settings{
+    @include mix.flex($jc: flex-start);
     position: fixed;
     left: 0;
-    display: flex;
     z-index: 90;
     height: 100vh;
-    align-items: center;
     article:first-child,
     article:nth-child(2){
         position: relative;
@@ -15,10 +15,10 @@
         max-height: 50vh;
     }
     article:first-child{
+        @include mix.transition($td: 1s, $ta: ease, $p: width);
         width: 0;
         overflow: hidden;
         position: relative;
-        transition: 1s ease width;
         background-color: fun.color('white');
         display: flex;
         min-height: clamp(3rem, 3vw, 3vw);
@@ -32,22 +32,19 @@
             z-index: 1;
         }
         .content-items{
+            @include mix.flex($ai: flex-end, $jc: space-between);
+            @include mix.transition($p: opacity);
             height: 100%;
             position: absolute;
             width: 100%;
             bottom: 0;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
             padding: 20px;
             opacity: 0;
-            transition: 0.5s ease opacity;
         }
     }
     article:nth-child(2){
+        @include mix.flex($ai: flex-start,);
         width: 100%;
-        display: flex;
-        align-items: flex-start;
         background-color: fun.color('primary');
         width: clamp(3rem, 3vw, 3vw);
         height: clamp(3rem, 3vw, 3vw);

@@ -1,21 +1,19 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 
 .switch-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include mix.flex($jc: space-between);
     width: 90%;
     margin: auto;
     .switch {
+        @include mix.flex($jc: flex-start);
+        $sizeSwitch: 7rem;
         width: 50%;
-        max-width: 7rem;
-        height: 3.5rem;
+        max-width: $sizeSwitch;
+        height: $sizeSwitch * 0.5;
         background-color: fun.color('primary');
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        border-radius: 50px;
-        padding: 0 5px;
+        border-radius: $sizeSwitch - 2rem;
+        padding: 0 0.5rem;
         cursor: pointer;
     }
     .switch[data-isOn="true"] {
@@ -23,8 +21,9 @@
         background-color: fun.color('tertiary');
     }
     .handle {
-        width: 2.5rem;
-        height: 2.5rem;
+        $sizeHandle: 2.5rem;
+        width: $sizeHandle;
+        height: $sizeHandle;
         background-color: white;
         border-radius: 40px;
     }
@@ -37,13 +36,15 @@
 @media(max-width: fun.breakpoints('ipad-big')){
     .switch-container{
         .handle {
+            $sizeHandle: 2rem;
             width: 2rem;
             height: 2rem;
         }
         .switch {
+            $sizeSwitch: 6rem;
             width: 50%;
-            max-width: 6rem;
-            height: 3rem;
+            max-width: $sizeSwitch;
+            height: $sizeSwitch * 0.5;
         }
     }
 }

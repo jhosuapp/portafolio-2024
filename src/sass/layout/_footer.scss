@@ -1,4 +1,5 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 @use '../base/variables' as var;
 
 .footer{
@@ -26,30 +27,26 @@
         position: relative;
         overflow: hidden;
         div {
+            @include mix.transition($p: width);
             position: absolute;
             height: 100%;
             background-color: fun.color('secondary');
             width: 0;
-            transition: .5s ease width;
         }
     }
     article:first-child {
         max-width: 10vw;
     }
     article:nth-child(2){
+        @include mix.flex($jc: space-between);
         padding: 6rem 0 0 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         & > p{
             font-size: clamp(2.5rem, 3vw, 3vw);
             text-transform: uppercase;
             color: fun.color('white');
         }
         & > div{
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            @include mix.flex($jc: flex-end);
             gap: 2rem;
             height: 0.2rem;
             width: 50%;
@@ -57,14 +54,13 @@
         }
     }
     article:nth-child(3){
-        display: flex;
-        justify-content: space-between;
+        @include mix.flex($jc: space-between, $ai: flex-start);
         padding-top: 6rem;
         div{
+            $size: 0.2rem;
+            $sizePercent: 100%;
+            @include mix.flex();
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: clamp(2rem, 1vw, 3rem);
             height: clamp(2rem, 1vw, 3rem);
             &::before,
@@ -74,12 +70,12 @@
                 background-color: fun.color('white');
             }
             &::before{
-                width: 100%;
-                height: 0.2rem;
+                width: $sizePercent;
+                height: $size;
             }
             &::after{
-                width: 0.2rem;
-                height: 100%;
+                width: $size;
+                height: $sizePercent;
             }
         }
     }
@@ -91,9 +87,7 @@
         background-color: fun.color('white');
     }
     ul{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include mix.flex($jc: space-between);
         padding: 2rem var.$limit-padding;
         width: 100%;
         list-style: none;
@@ -104,6 +98,7 @@
         a{
             position: relative;
             &::before{
+                @include mix.transition($p: width);
                 content: "";
                 position: absolute;
                 background-color: fun.color('primary');
@@ -112,7 +107,6 @@
                 height: 2px;
                 bottom: 0;
                 right: 0;
-                transition: .5s ease width;
             }
             &:hover{
                 &::before{

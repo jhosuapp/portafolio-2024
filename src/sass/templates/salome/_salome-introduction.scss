@@ -1,23 +1,22 @@
 @use '../../base/functions' as fun;
+@use '../../base/mixin' as mix;
 
 .salome-introduction {
+    @include mix.flex();
     position: fixed;
     width: 100%;
     height: 100vh;
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     pointer-events: none;
     top: 0;
     article{
+        @include mix.transition($td: 1s, $p: all);
         width: 100%;
         height: 100vh;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 1s ease all;
         &.animation-left{
             left: 0;
             top: 0;
@@ -43,13 +42,13 @@
         }
     }
     &-preview{
+        @include mix.transition($td: 1s, $p: top);
         z-index: 99;
         background-color: fun.color('purple');
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         top: 0;
-        transition: 1s ease top;
         button{
             pointer-events: all;
         }

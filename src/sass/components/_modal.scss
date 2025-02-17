@@ -1,18 +1,17 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 
 .modal{
+    @include mix.flex();
+    @include mix.transition(.5s, $p: opacity);
     position: fixed;
     left: 0;
     top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 100%;
     z-index: 100;
     pointer-events: none;
     opacity: 0;
-    transition: .5s ease opacity;
     &.active{
         opacity: 1;
         pointer-events: all;
@@ -30,6 +29,8 @@
         top: 0;
     }
     &__content{
+        @include mix.flex();
+        @include mix.transition(.5s, $p: all);
         position: relative;
         z-index: 1;
         background-color: fun.color('secondary');
@@ -37,13 +38,9 @@
         max-width: 50rem;
         padding: 4rem 6rem;
         border-radius: 1rem;
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         opacity: 0;
         transform: scale(1.1);
-        transition: .5s ease all;
         transition-delay: .25s;
         p{
             font-size: 2.5rem;

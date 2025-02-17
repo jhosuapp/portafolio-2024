@@ -30,8 +30,9 @@ $navigators: moz webkit ms o;
     background-color: $bg;
 }
 
-@mixin transition ($td: 0.3s, $p: all, $ta: ease){
-    transition: $td $p $ta;
+@mixin transition ($td: 0.5s, $ta: ease-in-out, $p: all){
+    transition: $td $ta;
+    transition-property: $p;
 }
 
 @mixin restarLink ($td: none, $color: color('primario')){

@@ -16,9 +16,9 @@ const Button = ( { Text, HoverText, className, isDisabled, isLoading, children, 
             viewport={{ once: true, amount: 0.5 }} 
             className={`
                 btn ${className}
-                ${isDisabled && 'disabled'}
-                ${isLoading && 'loading disabled'}
-                ${children && 'direction-row'}
+                ${isDisabled ? 'disabled' : ''}
+                ${isLoading ? 'loading disabled' : ''}
+                ${children ? 'direction-row' : ''}
             `}
             { ...attributes }
         >

@@ -1,17 +1,16 @@
+@use '../base/mixin' as mix;
+
 .h-text{
     div{
+        @include mix.flex();
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         overflow: hidden;
         width: 100%;
         padding: 0 1rem;
         z-index: 10;
     }
     span{
-        transition: .3s ease;
-        transition-property: bottom, top, opacity;
+        @include mix.transition(.3s, $p: (bottom, top, opacity));
         &:first-child{
             position: relative;
             top: 0;

@@ -1,32 +1,31 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 
 input[type="text"],
 input[type="number"],
 input[type="password"],
 input[type="tel"],
 input[type="email"]{
-    outline: inherit;
-    border: none;
+    $bg-input: fun.color('bg');
+    $bg-secondary: fun.color('secondary');
+    @include mix.restart_input($bg: $bg-input);
+    @include mix.flex();
+    @include mix.transition($p: (bottom, top));
     font-size: clamp(1rem, 1vw,1vw);
     font-weight: 500;
     padding: clamp(1rem, 0.75vw, 1vw) 2rem;
     border-radius: 100rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    background-color: fun.color('bg');
-    border: 2px solid fun.color('bg');
+    border: 2px solid $bg-input;
     opacity: 0;
-    transition: easeOut 0.5s all;
     &:hover{
-        border-color: fun.color('secondary');
+        border-color: $bg-secondary;
     }
     &:focus{
-        border-color: fun.color('secondary');
-        box-shadow: 0 0 0 2px fun.color('secondary');
+        border-color: $bg-secondary;
+        box-shadow: 0 0 0 2px $bg-secondary;;
     }
 }
 

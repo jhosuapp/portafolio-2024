@@ -1,4 +1,5 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 
 .slide-in{
     position: fixed;
@@ -18,12 +19,10 @@
 }
 
 .slide-loading{
+    @include mix.flex();
     position: fixed;
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: fun.color('secondary');
     z-index: 1;
     pointer-events: none;

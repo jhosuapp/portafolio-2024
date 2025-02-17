@@ -1,15 +1,15 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 @use '../base/variables' as var;
 
 .loader {
+    @include mix.flex($ai: flex-end, $jc: flex-start);
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100svh;
     z-index: 101;
-    display: flex;
-    align-items: flex-end;
     &__bg{
         background-color: #0f0f0f;
         width: 100%;
@@ -26,20 +26,18 @@
         bottom: -2vh;
     }
     &__progress{
+        @include mix.flex($ai: center, $jc: flex-start);
         position: absolute;
         width: 100%;
         height: 7.5vh;
         z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
         max-width: 300px;
         left: calc(50% - 150px);
         border: 2px solid fun.color('white');
         top: calc(50% - 3.75vh);
         span{
+            @include mix.transition(.1s, $p: (width));
             height: 100%;
-            transition: .1s ease width;
             background-color: fun.color('white');
         }
     }
@@ -48,8 +46,9 @@
 @media(max-width: fun.breakpoints('ipad-big')){
     .loader {
         &__progress{
-            max-width: 200px;
-            left: calc(50% - 100px);
+            $width: 200px;
+            max-width: $width;
+            left: calc(50% - ($width * 0.5));
         }
         &__counter{
             font-size: 7rem;

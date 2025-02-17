@@ -1,5 +1,7 @@
 @use '../base/functions' as fun;
-@import '../animations/sound';
+@use '../base/mixin' as mix;
+@use '../animations/sound';
+
 
 .sound{
     width: 2.25rem;
@@ -9,15 +11,15 @@
 
     }
     g:nth-child(1) path{
+        @include mix.transition();
         fill: fun.color('primary');
         transform: unset;
-        transition: .5s ease all;
         position: relative;
     }
     g:nth-child(2) path,
     g:nth-child(3) path{
+        @include mix.transition();
         opacity: 1;
-        transition: .5s ease all;
         transform: unset;
     }
     &.off-sound{

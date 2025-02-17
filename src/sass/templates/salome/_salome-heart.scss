@@ -1,6 +1,8 @@
 @use '../../base/functions' as fun;
+@use '../../base/mixin' as mix;
 
 .salome-heart{
+    @include mix.flex();
     position: absolute;
     z-index: 200;
     border-radius: 50%;
@@ -8,10 +10,6 @@
     box-shadow: inset 0 0 0 5.5vmin transparent;
     transform: translate(0, 0.05em) scale(0);
     transform-origin: center bottom;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: -1;
     &__image{
         opacity: 1;

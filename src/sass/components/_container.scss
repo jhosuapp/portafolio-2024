@@ -6,12 +6,13 @@ body{
     position: relative;
     overflow-x: hidden;
     &::before{
+        $position: 0;
         content: "";
         position: fixed;
         width: 100%;
         height: 130vh;
-        top: 0;
-        left: 0;
+        top: $position;
+        left: $position;
         background-color: fun.color('bg');
         z-index: -1;
     }
@@ -34,12 +35,13 @@ body{
 
 @media(max-width: fun.breakpoints('ipad-big')){
     .ctn{
+        $padding: 8rem;
         padding: 0 var.$limit-padding-mobile;
         &--top{
-            padding-top: 8rem;
+            padding-top: $padding;
         }
         &--top-mobile{
-            padding-top: 4rem;
+            padding-top: $padding * 0.5;
         }
     }
 }

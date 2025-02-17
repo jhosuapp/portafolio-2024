@@ -1,15 +1,16 @@
 
+@use '../../base/mixin' as mix;
+
 //Animations
 .home-hero{
     article:nth-child(2){
+        @include mix.transition($p: opacity);
         opacity: 0;
-        transition: .5s ease-in-out opacity;
         transition-delay: 0.5s;
     }
     article:nth-child(3){
         div, p{
-            transition: .5s ease-in-out;
-            transition-property: opacity transform;
+            @include mix.transition($p: (opacity transform));
         }
         div {
             opacity: 0;

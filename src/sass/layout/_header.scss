@@ -1,10 +1,9 @@
 @use '../base/functions' as fun;
 @use '../base/variables' as var;
+@use '../base/mixin' as mix;
 
 .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mix.flex($jc: space-between);
     padding: 3rem var.$limit-padding;
     position: fixed;
     width: 100%;
@@ -24,7 +23,7 @@
 
 .header__buttons{
     display: flex;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .header__logo{
@@ -67,19 +66,16 @@
         padding: 2rem 0.5rem;
         border-radius: 1.5rem;
         img{
+            @include mix.flex($jc: flex-start);
             width: 3rem;
             height: 3rem;
             border-radius: 100%;
-            display: flex;
-            align-items: center;
         }
         &.user_data{
-            display: flex;
+            @include mix.flex();
             gap: 0.5rem;
             margin-bottom: 1rem;
             pointer-events: none;
-            align-items: center;
-            justify-content: center;
             li{
                 pointer-events: none;
             }
@@ -95,14 +91,14 @@
         }
     }
     li{
+        @include mix.flex($jc: flex-start);
         margin-bottom: 0.5rem;
         position: relative;
-        display: flex;
-        align-items: center;
         &:last-child{
             margin-bottom: 0;
         }
         &::before{
+            @include mix.transition($td: 0.3s, $p: (transform, opacity));
             position: absolute;
             content: "";
             width: 100%;
@@ -113,8 +109,6 @@
             background-color: fun.color('secondary');
             z-index: 1;
             transform: scale(0.9);
-            transition: .3s ease;
-            transition-property: transform, opacity;
             opacity: 0;
         }
     }
@@ -148,13 +142,12 @@
 }
 
 .header__cta{
+    @include mix.flex($jc: flex-start);
     background-color: fun.color('primary');
     margin-top: 1rem;
     border-radius: 1.5rem;
     width: 100%;
     max-width: 30rem;
-    display: flex;
-    align-items: center;
     div{
         justify-content: flex-start;
     }
@@ -167,10 +160,9 @@
 }
 
 .header__group{
+    @include mix.flex($ai: flex-end, $jc: flex-start);
     width: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
 
 .header__bg{
@@ -194,14 +186,12 @@
         font-size: 1.8rem;
     }
     .header__nav{
+        @include mix.flex($jc: flex-start);
         padding: 0;
         max-width: 100%;
         width: 100%;
         left: 0;
         top: 0;
-        display: flex;
-        justify-content: start;
-        align-items: center;
         height: 100svh;
         max-height: 100svh;
         padding: 8rem 0 2rem;

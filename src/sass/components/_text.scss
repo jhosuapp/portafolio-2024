@@ -1,4 +1,5 @@
 @use '../base/functions' as fun;
+@use '../base/mixin' as mix;
 
 //ANIMATIONS
 
@@ -6,10 +7,9 @@
     position: relative;
     overflow: hidden;
     span{
+        @include mix.transition($p: (opacity, transform));
         opacity: 0;
         transform: translateY(20px);
-        transition: .5s ease;
-        transition-property: opacity, transform;
         transition-delay: var(--index);
     }
 }
@@ -43,6 +43,7 @@
     position: relative;
     color: currentColor;
     &::before{
+        @include mix.transition($p: width);
         content: "";
         width: 100%;
         height: 0.15rem;
@@ -50,7 +51,6 @@
         left: 0;
         bottom: 0;
         position: absolute;
-        transition: .5s ease width;
     }
     &:hover{
         &::before{

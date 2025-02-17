@@ -1,10 +1,9 @@
 @use '../../base/functions' as fun;
+@use '../../base/mixin' as mix;
 
 .login {
+    @include mix.flex();
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 6rem;
     &__form{
         width: 100%;
