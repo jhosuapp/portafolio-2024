@@ -2,8 +2,9 @@
 @use '../base/mixin' as mix;
 @use '../animations/sound';
 
+$prefix-sound: 'sound';
 
-.sound{
+.#{$prefix-sound}{
     width: 2.25rem;
     cursor: pointer;
     g path{

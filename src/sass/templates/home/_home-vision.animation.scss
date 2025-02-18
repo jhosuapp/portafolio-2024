@@ -1,9 +1,11 @@
 @use '../../base/functions' as fun;
 @use '../../base/mixin' as mix;
 
+$prefix-home-vision: 'home-vision';
+
 @media(max-width: fun.breakpoints('ipad-big')){
     //Animations
-    .home-vision-carrousel{
+    .#{$prefix-home-vision}-carrousel{
         &__item{
             img{
                 @include mix.transition($p: (opacity transform));
@@ -12,7 +14,7 @@
             }
         }
         &.animate-container{
-            .home-vision-carrousel__item{
+            .#{$prefix-home-vision}-carrousel__item{
                 img{
                     opacity: 1;
                     transform: translateX(0);

@@ -2,7 +2,9 @@
 @use '../base/mixin' as mix;
 @use '../animations/settings';
 
-.settings{
+$prefix-settings: 'settings';
+
+.#{$prefix-settings}{
     @include mix.flex($jc: flex-start);
     position: fixed;
     left: 0;
@@ -94,7 +96,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .settings{
+    .#{$prefix-settings}{
         article:nth-child(2){
             min-height: 3.5rem;
             justify-content: center;

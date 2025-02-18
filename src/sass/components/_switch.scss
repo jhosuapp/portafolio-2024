@@ -1,11 +1,13 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
 
-.switch-container{
+$prefix-switch: 'switch';
+
+.#{$prefix-switch}{
     @include mix.flex($jc: space-between);
     width: 90%;
     margin: auto;
-    .switch {
+    &-item {
         @include mix.flex($jc: flex-start);
         $sizeSwitch: 7rem;
         width: 50%;
@@ -15,12 +17,12 @@
         border-radius: $sizeSwitch - 2rem;
         padding: 0 0.5rem;
         cursor: pointer;
+        &[data-isOn="true"] {
+            justify-content: flex-end;
+            background-color: fun.color('tertiary');
+        }
     }
-    .switch[data-isOn="true"] {
-        justify-content: flex-end;
-        background-color: fun.color('tertiary');
-    }
-    .handle {
+    &-handle {
         $sizeHandle: 2.5rem;
         width: $sizeHandle;
         height: $sizeHandle;
@@ -34,13 +36,13 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .switch-container{
-        .handle {
+    .#{$prefix-switch} {
+        &-handle {
             $sizeHandle: 2rem;
             width: 2rem;
             height: 2rem;
         }
-        .switch {
+        &-item {
             $sizeSwitch: 6rem;
             width: 50%;
             max-width: $sizeSwitch;

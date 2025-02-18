@@ -2,7 +2,9 @@
 @use '../base/mixin' as mix;
 @use '../base/variables' as var;
 
-.loader {
+$prefix-loader: 'loader';
+
+.#{$prefix-loader} {
     @include mix.flex($ai: flex-end, $jc: flex-start);
     position: fixed;
     left: 0;
@@ -44,7 +46,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .loader {
+    .#{$prefix-loader} {
         &__progress{
             $width: 200px;
             max-width: $width;

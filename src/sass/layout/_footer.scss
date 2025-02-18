@@ -2,13 +2,15 @@
 @use '../base/mixin' as mix;
 @use '../base/variables' as var;
 
-.footer{
+$prefix-footer: 'footer';
+
+.#{$prefix-footer}{
     width: 100%;
     position: relative;
     z-index: 1;
 }
 
-.footer__scroll{
+.#{$prefix-footer}__scroll{
     background-color: fun.color('primary');
     padding: 6rem var.$limit-padding;
     width: 100%;
@@ -81,7 +83,7 @@
     }
 }
 
-.footer__information{
+.#{$prefix-footer}__information{
     background-color: fun.color('bg-footer');
     body.dark_mode & {
         background-color: fun.color('white');
@@ -120,7 +122,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .footer__scroll{
+    .#{$prefix-footer}__scroll{
         padding: 6rem var.$limit-padding-mobile;
         &__progress {
             width: 100%;
@@ -145,7 +147,7 @@
             }
         }
     }
-    .footer__information{
+    .#{$prefix-footer}__information{
         ul{
             padding: 2rem var.$limit-padding-mobile;
             flex-direction: column;

@@ -2,8 +2,9 @@
 @use '../base/mixin' as mix;
 @use '../animations/hamburger';
 
+$prefix-hamburger: 'hamburger';
 
-.hamburger{
+.#{$prefix-hamburger}{
     @include mix.flex($d: none, $jc: space-between);
     width: 30px;
     height: 20px;
@@ -57,7 +58,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .hamburger{
+    .#{$prefix-hamburger}{
         display: flex;
     }
 }

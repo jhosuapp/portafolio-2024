@@ -2,7 +2,9 @@
 @use '../../base/mixin' as mix;
 @use './home-hero.animation';
 
-.home-hero{
+$prefix-home-hero: 'home-hero';
+
+.#{$prefix-home-hero}{
     @include mix.flex($ai: flex-start, $jc: flex-end);
     flex-direction: column;
     pointer-events: none;
@@ -118,7 +120,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .home-hero{
+    .#{$prefix-home-hero}{
         height: auto;
         min-height: auto !important;
         justify-content: flex-start;

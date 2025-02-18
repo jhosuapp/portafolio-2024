@@ -2,7 +2,9 @@
 @use '../base/variables' as var;
 @use '../base/mixin' as mix;
 
-.header{
+$prefix-header: 'header';
+
+.#{$prefix-header}{
     @include mix.flex($jc: space-between);
     padding: 3rem var.$limit-padding;
     position: fixed;
@@ -21,12 +23,12 @@
     }
 }
 
-.header__buttons{
+.#{$prefix-header}__buttons{
     display: flex;
     gap: 1rem;
 }
 
-.header__logo{
+.#{$prefix-header}__logo{
     font-size: clamp(1.5rem, 2vw, 2vw);
     font-weight: 500;
     text-transform: uppercase;
@@ -39,18 +41,18 @@
     }
 }
 
-.header__buttons,
-.header__logo{
+.#{$prefix-header}__buttons,
+.#{$prefix-header}__logo{
     position: relative;
     z-index: 9;
 }
 
-.header__nav{
+.#{$prefix-header}__nav{
     position: relative;
     z-index: 8;
 }
 
-.header__nav{
+.#{$prefix-header}__nav{
     position: absolute;
     right: var.$limit-padding;
     top: var.$height-header;
@@ -84,7 +86,7 @@
             }
             span{
                 display: -webkit-box;
-                -webkit-line-clamp: 1;
+                line-clamp: 1;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
@@ -141,7 +143,7 @@
     }
 }
 
-.header__cta{
+.#{$prefix-header}__cta{
     @include mix.flex($jc: flex-start);
     background-color: fun.color('primary');
     margin-top: 1rem;
@@ -159,13 +161,13 @@
     }
 }
 
-.header__group{
+.#{$prefix-header}__group{
     @include mix.flex($ai: flex-end, $jc: flex-start);
     width: 100%;
     flex-direction: column;
 }
 
-.header__bg{
+.#{$prefix-header}__bg{
     position: absolute;    
     width: 100%;
     height: 100svh;
@@ -174,18 +176,18 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .header{
+    .#{$prefix-header}{
         padding: 2rem var.$limit-padding-mobile;
         &.active-hamburger{ 
-            .header__logo{
+            .#{$prefix-header}__logo{
                 color: fun.color('white');
             }
         }
     }
-    .header__logo{
+    .#{$prefix-header}__logo{
         font-size: 1.8rem;
     }
-    .header__nav{
+    .#{$prefix-header}__nav{
         @include mix.flex($jc: flex-start);
         padding: 0;
         max-width: 100%;
@@ -203,19 +205,19 @@
             font-size: 1.6rem;
         }
     }
-    .header__cta{
+    .#{$prefix-header}__cta{
         max-width: 90%;
     }
-    .header__group{
+    .#{$prefix-header}__group{
         align-items: center;
     }
-    .header__bg{
+    .#{$prefix-header}__bg{
         background-color: rgb(0,0,0, .55);
     }
 }
 
 @media(max-width: 375px){
-    .header__buttons{
+    .#{$prefix-header}__buttons{
         button:first-child{
             display: none !important;
         }

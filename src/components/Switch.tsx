@@ -28,10 +28,10 @@ const Switch = React.memo(({ text, id }:ISwitch):JSX.Element => {
     }
 
     return (
-        <div className="switch-container">
+        <div className="switch">
             <p>{ text } ({modes[id] ? 'on' : 'off'})</p>
-            <div className="switch" data-ison={modes[id]} onClick={ handleSwitch }>
-                <motion.div className="handle" layout transition={ variantSwitch } />
+            <div className="switch-item" data-ison={modes[id]} onClick={ handleSwitch }>
+                <motion.div className="switch-handle" layout transition={ variantSwitch } />
             </div>
         </div>
     )

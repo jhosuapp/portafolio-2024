@@ -2,7 +2,9 @@
 @use '../../base/mixin' as mix;
 @use './home-vision.animation';
 
-.home-vision{
+$prefix-home-vision: 'home-vision';
+
+.#{$prefix-home-vision}{
     article:first-child{
         h2, h3{
             font-size: 10vw;
@@ -43,7 +45,7 @@
     }
 }
 
-.home-vision-carrousel{
+.#{$prefix-home-vision}-carrousel{
     padding: 10vh 0;
     position: relative;
     overflow-x: hidden;
@@ -72,7 +74,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .home-vision{
+    .#{$prefix-home-vision}{
         article:first-child{
             h2, h3{
                 font-size: 8vw;
@@ -83,7 +85,7 @@
             }
         }
     }
-    .home-vision-carrousel{
+    .#{$prefix-home-vision}-carrousel{
         padding: 2rem 0;
         &__container{
             left: -10vw;

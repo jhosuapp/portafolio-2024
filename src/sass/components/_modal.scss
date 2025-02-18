@@ -1,7 +1,9 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
 
-.modal{
+$prefix-modal: 'modal';
+
+.#{$prefix-modal}{
     @include mix.flex();
     @include mix.transition(.5s, $p: opacity);
     position: fixed;
@@ -15,7 +17,7 @@
     &.active{
         opacity: 1;
         pointer-events: all;
-        .modal__content{
+        .#{$prefix-modal}__content{
             transform: scale(1);
             opacity: 1;
         }
@@ -51,7 +53,7 @@
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .modal{
+    .#{$prefix-modal}{
         &__content{
             p{
                 font-size: 2rem;

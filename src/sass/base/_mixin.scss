@@ -1,5 +1,12 @@
 @use "sass:list";
+@use "sass:selector";
 $navigators: moz webkit ms o;
+
+@mixin unify-parent($child) {
+    @at-root #{selector.unify(&, $child)} {
+        @content;
+    }
+}
 
 @mixin prefix($properties, $values, $prefixes: $navigators) {
     $pairs: list.zip($properties, $values);

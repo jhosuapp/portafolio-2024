@@ -2,7 +2,9 @@
 @use '../base/mixin' as mix;
 @use '../animations/button';
 
-.btn {
+$prefix-button: 'btn';
+
+.#{$prefix-button} {
     @include mix.restart_button();
     @include mix.flex();
     font-size: clamp(1rem, 1vw,1vw);
@@ -69,7 +71,7 @@
                 width: 200px;
                 height: 200px;
             }       
-            &.btn--secondary{
+            &.#{$prefix-button}--secondary{
                 color: fun.color('white');
             }
         }
@@ -107,14 +109,14 @@
             width: 200px;
             height: 200px;
         }       
-        &.btn--secondary{
+        &.#{$prefix-button}--secondary{
             color: fun.color('white');
         }
     }
 }
 
 @media(max-width: fun.breakpoints('ipad-big')){
-    .btn{
+    .#{$prefix-button}{
         font-size: 1rem;
         padding: 1rem 1.5rem;
         padding-right: 3rem;

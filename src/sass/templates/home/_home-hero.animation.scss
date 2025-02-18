@@ -1,8 +1,10 @@
 
 @use '../../base/mixin' as mix;
 
+$prefix-home-hero: 'home-hero';
+
 //Animations
-.home-hero{
+.#{$prefix-home-hero}{
     article:nth-child(2){
         @include mix.transition($p: opacity);
         opacity: 0;

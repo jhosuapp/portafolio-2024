@@ -1,6 +1,8 @@
 @use '../base/functions' as fun;
 
-.progress-bar {
+$prefix-progress-bar: 'progress-bar';
+
+.#{$prefix-progress-bar} {
   position: fixed;
   top: 0;
   left: 0;
