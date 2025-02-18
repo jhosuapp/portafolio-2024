@@ -1,8 +1,9 @@
 @use '../base/mixin' as mix;
+@use '../base/placeholder';
 
 .h-text{
     div{
-        @include mix.flex();
+        @extend %flex;
         position: relative;
         overflow: hidden;
         width: 100%;

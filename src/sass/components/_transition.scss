@@ -1,5 +1,6 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
+@use '../base/placeholder';
 
 .slide-in{
     position: fixed;
@@ -19,7 +20,7 @@
 }
 
 .slide-loading{
-    @include mix.flex();
+    @extend %flex;
     position: fixed;
     width: 100%;
     height: 100vh;

@@ -1,8 +1,9 @@
 @use '../../base/functions' as fun;
 @use '../../base/mixin' as mix;
+@use '../../base/placeholder';
 
 .salome-heart{
-    @include mix.flex();
+    @extend %flex;
     position: absolute;
     z-index: 200;
     border-radius: 50%;

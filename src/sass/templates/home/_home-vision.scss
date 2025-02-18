@@ -1,5 +1,6 @@
 @use '../../base/functions' as fun;
 @use '../../base/mixin' as mix;
+@use '../../base/placeholder';
 @use './home-vision.animation';
 
 $prefix-home-vision: 'home-vision';
@@ -58,7 +59,7 @@ $prefix-home-vision: 'home-vision';
         left: -10vw;
     }
     &__item{
-        @include mix.flex();
+        @extend %flex;
         flex: 0 0 auto;
         width: 35vw;
         height: 22.5vw;

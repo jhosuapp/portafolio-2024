@@ -26,35 +26,33 @@ $navigators: moz webkit ms o;
     }
 }  
 
-@mixin restart_button ($o: inherit, $b: none){
-    outline: $o;
-    border: $b;
-}
+// Add position
+@mixin addPosition( $t: false, $r: false, $b: false, $l: false, $type: center ) {
+    @if( $type == center ) {
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    } @else {
+        @if( $t ) { top: $t; }
+        @if( $r ) { right: $r; }
+        @if( $b ) { bottom: $b; }
+        @if( $l ) { left: $l; }
+    }
+}  
 
-@mixin restart_input ($o: inherit, $b: none, $bg: transparent){
-    outline: $o;
-    border: $b;
-    background-color: $bg;
-}
-
+//Transition
 @mixin transition ($td: 0.5s, $ta: ease-in-out, $p: all){
     transition: $td $ta;
     transition-property: $p;
 }
 
-@mixin restarLink ($td: none, $color: color('primario')){
-    text-decoration: $td;
-    color: $color;
-}
-
+//flex
 @mixin flex ($dp: flex, $jc: center, $ai: center){
     display: $dp;
     justify-content: $jc;
     align-items: $ai;
-}
-
-@mixin restart_li ($ls: none){
-    list-style: $ls;
 }
 
 @mixin before_hover($bg: color('white')){

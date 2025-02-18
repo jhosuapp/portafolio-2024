@@ -1,6 +1,7 @@
 @use '../base/functions' as fun;
 @use '../base/variables' as var;
 @use '../base/mixin' as mix;
+@use '../base/placeholder';
 
 $prefix-header: 'header';
 
@@ -74,7 +75,7 @@ $prefix-header: 'header';
             border-radius: 100%;
         }
         &.user_data{
-            @include mix.flex();
+            @extend %flex;
             gap: 0.5rem;
             margin-bottom: 1rem;
             pointer-events: none;

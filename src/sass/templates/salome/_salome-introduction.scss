@@ -1,8 +1,9 @@
 @use '../../base/functions' as fun;
 @use '../../base/mixin' as mix;
+@use '../../base/placeholder';
 
 .salome-introduction {
-    @include mix.flex();
+    @extend %flex;
     position: fixed;
     width: 100%;
     height: 100vh;

@@ -1,10 +1,11 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
+@use '../base/placeholder';
 
 $prefix-modal: 'modal';
 
 .#{$prefix-modal}{
-    @include mix.flex();
+    @extend %flex;
     @include mix.transition(.5s, $p: opacity);
     position: fixed;
     left: 0;
@@ -31,7 +32,7 @@ $prefix-modal: 'modal';
         top: 0;
     }
     &__content{
-        @include mix.flex();
+        @extend %flex;
         @include mix.transition(.5s, $p: all);
         position: relative;
         z-index: 1;

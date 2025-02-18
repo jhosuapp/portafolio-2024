@@ -1,5 +1,6 @@
 @use '../../base/functions' as fun;
 @use '../../base/mixin' as mix;
+@use '../../base/placeholder';
 @use './home-hero.animation';
 
 $prefix-home-hero: 'home-hero';
@@ -94,7 +95,7 @@ $prefix-home-hero: 'home-hero';
             }
         }
         div{
-            @include mix.flex();
+            @extend %flex;
             position: relative;
             width: clamp(1rem, 2vh, 2vh);
             height: clamp(1rem, 2vh, 2vh);

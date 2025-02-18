@@ -1,12 +1,13 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
+@use '../base/placeholder';
 @use '../animations/button';
 
 $prefix-button: 'btn';
 
 .#{$prefix-button} {
-    @include mix.restart_button();
-    @include mix.flex();
+    @extend %restart-input;
+    @extend %flex;
     font-size: clamp(1rem, 1vw,1vw);
     text-transform: uppercase;
     font-weight: 500;
@@ -31,7 +32,7 @@ $prefix-button: 'btn';
         flex-direction: row;
     }
     & > div:first-child{
-        @include mix.flex();
+        @extend %flex;
         position: relative;
         overflow: hidden;
         width: 100%;
@@ -39,7 +40,7 @@ $prefix-button: 'btn';
         z-index: 10;
     }
     & > div:last-child{
-        @include mix.flex();
+        @extend %flex;
         position: absolute;
         right: 2rem;
         width: 1rem;

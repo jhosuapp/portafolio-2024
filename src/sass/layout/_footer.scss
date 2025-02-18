@@ -1,6 +1,7 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
 @use '../base/variables' as var;
+@use '../base/placeholder';
 
 $prefix-footer: 'footer';
 
@@ -61,7 +62,7 @@ $prefix-footer: 'footer';
         div{
             $size: 0.2rem;
             $sizePercent: 100%;
-            @include mix.flex();
+            @extend %flex;
             position: relative;
             width: clamp(2rem, 1vw, 3rem);
             height: clamp(2rem, 1vw, 3rem);

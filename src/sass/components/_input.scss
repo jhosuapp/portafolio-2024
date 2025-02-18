@@ -1,5 +1,6 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
+@use '../base/placeholder';
 
 input[type="text"],
 input[type="number"],
@@ -8,9 +9,10 @@ input[type="tel"],
 input[type="email"]{
     $bg-input: fun.color('bg');
     $bg-secondary: fun.color('secondary');
-    @include mix.restart_input($bg: $bg-input);
-    @include mix.flex();
+    @extend %restart-input;
+    @extend %flex;
     @include mix.transition($p: (bottom, top));
+    background-color: $bg-input;
     font-size: clamp(1rem, 1vw,1vw);
     font-weight: 500;
     padding: clamp(1rem, 0.75vw, 1vw) 2rem;

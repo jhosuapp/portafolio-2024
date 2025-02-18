@@ -1,11 +1,18 @@
 @use "sass:map";
 
 @use './variables' as var;
-//COLORS
+
+// colors
 @function color($name){
-    @return map.get($map: var.$palette, $key: $name);
+    @return map.get(var.$palette, $name);
 }
-//BREAKPOINTS
+ //Breakpoints
 @function breakpoints($name){
-    @return map.get($map: var.$breakpoints, $key: $name);
+    @return map.get(var.$breakpoints, $name);
+}
+
+// Get Asset
+@function assets($url) {
+    $urlComplete: var.$pathAssets + $url;
+    @return url($urlComplete);
 }
